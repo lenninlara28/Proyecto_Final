@@ -35,6 +35,12 @@ public class Carta extends javax.swing.JDialog {
         jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -45,7 +51,7 @@ public class Carta extends javax.swing.JDialog {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 3, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(0, 204, 204));
         jLabel1.setText("Desayunos");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
@@ -55,12 +61,12 @@ public class Carta extends javax.swing.JDialog {
         jButton1.setPreferredSize(new java.awt.Dimension(136, 88));
         jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/desayunos_click.png"))); // NOI18N
         jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/desayunos_mouse.png"))); // NOI18N
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 3, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(51, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(0, 204, 204));
         jLabel2.setText("Asados");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, -1, -1));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Asados.png"))); // NOI18N
         jButton2.setBorderPainted(false);
@@ -68,12 +74,12 @@ public class Carta extends javax.swing.JDialog {
         jButton2.setPreferredSize(new java.awt.Dimension(136, 88));
         jButton2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Asados_click.png"))); // NOI18N
         jButton2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Asados_mouse.png"))); // NOI18N
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(51, 255, 255));
-        jLabel3.setText("Corrientes");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 40, 120, 20));
+        jLabel3.setForeground(new java.awt.Color(0, 204, 204));
+        jLabel3.setText("Almuerzos");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, 120, 20));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Corrientes.png"))); // NOI18N
         jButton3.setBorderPainted(false);
@@ -81,18 +87,57 @@ public class Carta extends javax.swing.JDialog {
         jButton3.setPreferredSize(new java.awt.Dimension(132, 135));
         jButton3.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Corrientes_click.png"))); // NOI18N
         jButton3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Corrientes_mouse.png"))); // NOI18N
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, -1, -1));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 70, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 3, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 204, 204));
+        jLabel5.setText("Helados y Postres");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Helados.png"))); // NOI18N
+        jButton4.setBorderPainted(false);
+        jButton4.setContentAreaFilled(false);
+        jButton4.setPreferredSize(new java.awt.Dimension(183, 114));
+        jButton4.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Helados_click.png"))); // NOI18N
+        jButton4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Helados_mouse.png"))); // NOI18N
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Trebuchet MS", 3, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 204, 204));
+        jLabel6.setText("Comidas Rapidas");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 250, -1, -1));
+
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Comidas_Rapidas.png"))); // NOI18N
+        jButton6.setPreferredSize(new java.awt.Dimension(180, 124));
+        jButton6.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Comidas_Rapidas_Click.png"))); // NOI18N
+        jButton6.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Comidas_Rapidas_mouse.png"))); // NOI18N
+        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Trebuchet MS", 3, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 204, 204));
+        jLabel7.setText("Bebidas");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, -1, -1));
+
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Bebidas.png"))); // NOI18N
+        jButton5.setBorderPainted(false);
+        jButton5.setContentAreaFilled(false);
+        jButton5.setPreferredSize(new java.awt.Dimension(151, 111));
+        jButton5.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Bebidas_click.png"))); // NOI18N
+        jButton5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Bebidas_mouse.png"))); // NOI18N
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo menú.png"))); // NOI18N
-        jLabel4.setText("jLabel4");
+        jLabel4.setToolTipText("");
         jLabel4.setPreferredSize(new java.awt.Dimension(705, 618));
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1053, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,10 +194,16 @@ public class Carta extends javax.swing.JDialog {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

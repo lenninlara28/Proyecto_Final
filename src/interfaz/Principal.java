@@ -6,7 +6,6 @@
 package interfaz;
 
 import clases.Helper;
-import clases.Mesas;
 import javax.swing.JButton;
 
 /**
@@ -248,9 +247,9 @@ public class Principal extends javax.swing.JFrame {
         jLabel14.setText("Mesas Ocupadas");
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 600, -1, -1));
 
-        txtEstado.setText("1");
+        txtEstado.setText("0");
         txtEstado.setEnabled(false);
-        jPanel1.add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, -1));
+        jPanel1.add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 20, 30));
 
         mnOpciones.setText("Opciones");
         mnOpciones.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -290,51 +289,61 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmdMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMesa1ActionPerformed
-            Opciones a = new Opciones(this, true);
-            a.setVisible(true);
+        txtEstado.setText("1");
+        Opciones a = new Opciones(this, true);
+        a.setVisible(true);
     }//GEN-LAST:event_cmdMesa1ActionPerformed
 
     private void cmdMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMesa2ActionPerformed
+        txtEstado.setText("2");
         Opciones a = new Opciones(this, true);
         a.setVisible(true);
     }//GEN-LAST:event_cmdMesa2ActionPerformed
 
     private void cmdMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMesa3ActionPerformed
+        txtEstado.setText("3");
         Opciones a = new Opciones(this, true);
         a.setVisible(true);
     }//GEN-LAST:event_cmdMesa3ActionPerformed
 
     private void cmdMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMesa4ActionPerformed
+        txtEstado.setText("4");
         Opciones a = new Opciones(this, true);
         a.setVisible(true);
     }//GEN-LAST:event_cmdMesa4ActionPerformed
 
     private void cmdMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMesa5ActionPerformed
+        txtEstado.setText("5");
         Opciones a = new Opciones(this, true);
         a.setVisible(true);
     }//GEN-LAST:event_cmdMesa5ActionPerformed
 
     private void cmdMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMesa6ActionPerformed
+        txtEstado.setText("6");
         Opciones a = new Opciones(this, true);
         a.setVisible(true);
     }//GEN-LAST:event_cmdMesa6ActionPerformed
 
     private void cmdMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMesa7ActionPerformed
+        txtEstado.setText("7");
         Opciones a = new Opciones(this, true);
         a.setVisible(true);
     }//GEN-LAST:event_cmdMesa7ActionPerformed
 
     private void cmdMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMesa8ActionPerformed
+        txtEstado.setText("8");
         Opciones a = new Opciones(this, true);
         a.setVisible(true);
     }//GEN-LAST:event_cmdMesa8ActionPerformed
 
     private void cmdMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMesa9ActionPerformed
+        txtEstado.setText("9");
         Opciones a = new Opciones(this, true);
         a.setVisible(true);
     }//GEN-LAST:event_cmdMesa9ActionPerformed
 
     private void cmdMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMesa10ActionPerformed
+        txtEstado.setText("10");
         Opciones a = new Opciones(this, true);
         a.setVisible(true);
     }//GEN-LAST:event_cmdMesa10ActionPerformed
@@ -379,16 +388,16 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton cmdMesa1;
-    private javax.swing.JButton cmdMesa10;
-    private javax.swing.JButton cmdMesa2;
-    private javax.swing.JButton cmdMesa3;
-    private javax.swing.JButton cmdMesa4;
-    private javax.swing.JButton cmdMesa5;
-    private javax.swing.JButton cmdMesa6;
-    private javax.swing.JButton cmdMesa7;
-    private javax.swing.JButton cmdMesa8;
-    private javax.swing.JButton cmdMesa9;
+    public static javax.swing.JButton cmdMesa1;
+    public static javax.swing.JButton cmdMesa10;
+    public static javax.swing.JButton cmdMesa2;
+    public static javax.swing.JButton cmdMesa3;
+    public static javax.swing.JButton cmdMesa4;
+    public static javax.swing.JButton cmdMesa5;
+    public static javax.swing.JButton cmdMesa6;
+    public static javax.swing.JButton cmdMesa7;
+    public static javax.swing.JButton cmdMesa8;
+    public static javax.swing.JButton cmdMesa9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -408,6 +417,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu mnOpciones;
     private javax.swing.JMenuItem mnReportes;
     private javax.swing.JMenu mnSalir;
-    private javax.swing.JLabel txtEstado;
+    public static javax.swing.JLabel txtEstado;
     // End of variables declaration//GEN-END:variables
 }
