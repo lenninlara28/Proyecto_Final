@@ -6,6 +6,7 @@
 package clases;
 
 import java.awt.Component;
+import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
@@ -66,15 +67,6 @@ public class Helper {
 
         }
     }
-    
-    public static void habilitarMesas(JRadioButton[] RadiosH){
-        for (int i = 0; i < RadiosH.length; i++) {
-             if (RadiosH[i].isSelected()){
-                 
-             }
-            
-        }
-        
-    }
+
 
 }
