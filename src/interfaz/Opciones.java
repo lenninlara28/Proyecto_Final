@@ -5,6 +5,8 @@
  */
 package interfaz;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author hp 14
@@ -167,7 +169,7 @@ public class Opciones extends javax.swing.JDialog {
                 System.out.println("prueba");
                 break;
             case 1:
-                Principal.cmdMesa1.setEnabled(false);
+                Principal.cmdMesa1.setIcon(new ImageIcon(getClass().getResource("src/imagenes/mesas ocupadas.png")));
                 System.out.println("Ok");
                 break;
             case 2:

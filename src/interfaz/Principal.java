@@ -5,8 +5,7 @@
  */
 package interfaz;
 
-import clases.Helper;
-import javax.swing.JButton;
+
 
 /**
  *

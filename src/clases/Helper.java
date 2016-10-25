@@ -6,10 +6,8 @@
 package clases;
 
 import java.awt.Component;
-import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
-import javax.swing.JRadioButton;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
