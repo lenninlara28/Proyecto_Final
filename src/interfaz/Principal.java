@@ -5,6 +5,9 @@
  */
 package interfaz;
 
+import java.util.ArrayList;
+import javax.swing.JButton;
+
 
 
 /**
@@ -16,8 +19,10 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
+   
     public Principal() {
         initComponents();
+       
     }
 
     /**

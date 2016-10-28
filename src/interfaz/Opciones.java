@@ -5,7 +5,10 @@
  */
 package interfaz;
 
+import clases.Helper;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 
 /**
  *
@@ -154,7 +157,7 @@ public class Opciones extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmdAbrirCartaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdAbrirCartaActionPerformed
-         Carta a = new Carta(null, true);
+        Carta a = new Carta(null, true);
         a.setVisible(true);
     }//GEN-LAST:event_cmdAbrirCartaActionPerformed
 
@@ -169,12 +172,10 @@ public class Opciones extends javax.swing.JDialog {
                 System.out.println("prueba");
                 break;
             case 1:
-                Principal.cmdMesa1.setIcon(new ImageIcon(getClass().getResource("src/imagenes/mesas ocupadas.png")));
-                System.out.println("Ok");
+                Principal.cmdMesa1.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
                 break;
             case 2:
-                Principal.cmdMesa2.setEnabled(false);
-                System.out.println("Ok");
+                Principal.cmdMesa2.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
                 break;
             case 3:
                 Principal.cmdMesa3.setEnabled(false);
