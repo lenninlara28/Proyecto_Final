@@ -178,36 +178,28 @@ public class Opciones extends javax.swing.JDialog {
                 Principal.cmdMesa2.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
                 break;
             case 3:
-                Principal.cmdMesa3.setEnabled(false);
-                System.out.println("Ok");
+                Principal.cmdMesa3.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
                 break;
             case 4:
-                Principal.cmdMesa4.setEnabled(false);
-                System.out.println("Ok");
+                Principal.cmdMesa4.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
                 break;
             case 5:
-                Principal.cmdMesa5.setEnabled(false);
-                System.out.println("Ok");
+                Principal.cmdMesa5.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
                 break;
             case 6:
-                Principal.cmdMesa6.setEnabled(false);
-                System.out.println("Ok");
+                Principal.cmdMesa6.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
                 break;
             case 7:
-                Principal.cmdMesa7.setEnabled(false);
-                System.out.println("Ok");
+                Principal.cmdMesa7.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
                 break;
             case 8:
-                Principal.cmdMesa8.setEnabled(false);
-                System.out.println("Ok");
+                Principal.cmdMesa8.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
                 break;
             case 9:
-                Principal.cmdMesa9.setEnabled(false);
-                System.out.println("Ok");
+                Principal.cmdMesa9.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
                 break;
             case 10:
-                Principal.cmdMesa10.setEnabled(false);
-                System.out.println("Ok");
+                Principal.cmdMesa10.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
                 break;
         }
     }//GEN-LAST:event_cmdConfirmarActionPerformed
