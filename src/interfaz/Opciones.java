@@ -8,7 +8,6 @@ package interfaz;
 import clases.Helper;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 
 /**
  *
@@ -126,6 +125,11 @@ public class Opciones extends javax.swing.JDialog {
         cmdCancelar.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         cmdCancelar.setForeground(new java.awt.Color(255, 255, 255));
         cmdCancelar.setText("Cancelar");
+        cmdCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCancelarActionPerformed(evt);
+            }
+        });
         jPanel4.add(cmdCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
 
         cmdConfirmar.setBackground(new java.awt.Color(0, 0, 0));
@@ -173,36 +177,51 @@ public class Opciones extends javax.swing.JDialog {
                 break;
             case 1:
                 Principal.cmdMesa1.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
+                Principal.cmdMesa1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
                 break;
             case 2:
                 Principal.cmdMesa2.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
+                Principal.cmdMesa2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
                 break;
             case 3:
                 Principal.cmdMesa3.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
+                Principal.cmdMesa3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
                 break;
             case 4:
                 Principal.cmdMesa4.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
+                Principal.cmdMesa4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
                 break;
             case 5:
                 Principal.cmdMesa5.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
+                Principal.cmdMesa5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
                 break;
             case 6:
                 Principal.cmdMesa6.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
+                Principal.cmdMesa6.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
                 break;
             case 7:
                 Principal.cmdMesa7.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
+                Principal.cmdMesa7.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
                 break;
             case 8:
                 Principal.cmdMesa8.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
+                Principal.cmdMesa8.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
                 break;
             case 9:
                 Principal.cmdMesa9.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
+                Principal.cmdMesa9.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
                 break;
             case 10:
                 Principal.cmdMesa10.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
+                Principal.cmdMesa10.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
                 break;
         }
+        Opciones.this.setVisible(false);
     }//GEN-LAST:event_cmdConfirmarActionPerformed
+
+    private void cmdCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCancelarActionPerformed
+        Opciones.this.setVisible(false);
+    }//GEN-LAST:event_cmdCancelarActionPerformed
 
     /**
      * @param args the command line arguments

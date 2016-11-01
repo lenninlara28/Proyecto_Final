@@ -52,27 +52,27 @@ public class ComidasRapidas extends javax.swing.JDialog {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel1.setText("Arepas");
+        jLabel1.setText("Arepa");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel2.setText("Hamburguesas");
+        jLabel2.setText("Hamburguesa");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel3.setText("Pizzas");
+        jLabel3.setText("Pizza");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel4.setText("Perros Calientes");
+        jLabel4.setText("Perro Caliente");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel5.setText("Gratinados");
+        jLabel5.setText("Gratinado");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, -1, -1));
         getContentPane().add(txtCantidadUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 60, -1));
         getContentPane().add(txtCantidadDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 60, -1));

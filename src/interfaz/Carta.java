@@ -41,6 +41,7 @@ public class Carta extends javax.swing.JDialog {
         jButton6 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
+        cmdOK = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -155,6 +156,17 @@ public class Carta extends javax.swing.JDialog {
         });
         jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, -1, -1));
 
+        cmdOK.setBackground(new java.awt.Color(0, 0, 0));
+        cmdOK.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        cmdOK.setForeground(new java.awt.Color(255, 255, 255));
+        cmdOK.setText("OK");
+        cmdOK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdOKActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdOK, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 570, 90, 40));
+
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo menú.png"))); // NOI18N
         jLabel4.setToolTipText("");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, -1));
@@ -206,6 +218,10 @@ public class Carta extends javax.swing.JDialog {
         cr.setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    private void cmdOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdOKActionPerformed
+        Carta.this.setVisible(false);
+    }//GEN-LAST:event_cmdOKActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -249,6 +265,7 @@ public class Carta extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmdOK;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
