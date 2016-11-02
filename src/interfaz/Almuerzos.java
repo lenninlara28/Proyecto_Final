@@ -5,6 +5,10 @@
  */
 package interfaz;
 
+import clases.Helper;
+import clases.Pedido;
+import java.util.ArrayList;
+
 /**
  *
  * @author User
@@ -17,6 +21,18 @@ public class Almuerzos extends javax.swing.JDialog {
     public Almuerzos(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        txtCantidadUno.setVisible(false);
+        jLabel15.setVisible(false);
+        txtCantidadDos.setVisible(false);
+        jLabel17.setVisible(false);
+        txtCantidadTres.setVisible(false);
+        jLabel18.setVisible(false);
+        txtCantidadCuatro.setVisible(false);
+        jLabel19.setVisible(false);
+        txtCantidadCinco.setVisible(false);
+        jLabel20.setVisible(false);
+        txtCantidadSeis.setVisible(false);
+        jLabel21.setVisible(false);
     }
 
     /**
@@ -28,41 +44,44 @@ public class Almuerzos extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel16 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        L = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         txtCantidadUno = new javax.swing.JTextField();
         txtCantidadDos = new javax.swing.JTextField();
         txtCantidadTres = new javax.swing.JTextField();
         txtCantidadCuatro = new javax.swing.JTextField();
         txtCantidadCinco = new javax.swing.JTextField();
         txtCantidadSeis = new javax.swing.JTextField();
-        txtCantidadSiete = new javax.swing.JTextField();
-        txtCantidadOcho = new javax.swing.JTextField();
-        txtCantidadNueve = new javax.swing.JTextField();
-        txtCantidadDiez = new javax.swing.JTextField();
-        txtCantidadOnce = new javax.swing.JTextField();
         checkBox1 = new javax.swing.JCheckBox();
         checkBox2 = new javax.swing.JCheckBox();
         checkBox3 = new javax.swing.JCheckBox();
         checkBox4 = new javax.swing.JCheckBox();
         checkBox5 = new javax.swing.JCheckBox();
         checkBox6 = new javax.swing.JCheckBox();
-        checkBox7 = new javax.swing.JCheckBox();
-        checkBox8 = new javax.swing.JCheckBox();
-        checkBox9 = new javax.swing.JCheckBox();
-        checkBox10 = new javax.swing.JCheckBox();
-        checkBox11 = new javax.swing.JCheckBox();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        cmdCancelar = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_menú2.png"))); // NOI18N
+        jLabel16.setText("jLabel16");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Almuerzos");
@@ -71,27 +90,17 @@ public class Almuerzos extends javax.swing.JDialog {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
         jLabel1.setText("Mojarra Frita");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 255));
         jLabel2.setText("Pechuga a la plancha");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel3.setText("Bandeja paisa");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel4.setText("Sobre barriga");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 255));
         jLabel5.setText("lomo de cerdo");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, -1, 20));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, -1, 20));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 255));
@@ -101,65 +110,372 @@ public class Almuerzos extends javax.swing.JDialog {
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 255));
         jLabel7.setText("churrasco");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 255));
         jLabel8.setText("Punta Gorda");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, -1, -1));
 
-        L.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        L.setForeground(new java.awt.Color(0, 0, 255));
-        L.setText("Lengua Guisada");
-        getContentPane().add(L, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, -1, -1));
+        txtCantidadUno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCantidadUnoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtCantidadUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 50, -1));
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel10.setText("Filete de robalo al ajillo");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, -1, -1));
+        txtCantidadDos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCantidadDosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtCantidadDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 50, -1));
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel9.setText("Carne en posta");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 430, -1, -1));
-        getContentPane().add(txtCantidadUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 60, -1));
-        getContentPane().add(txtCantidadDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 60, -1));
-        getContentPane().add(txtCantidadTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 60, -1));
-        getContentPane().add(txtCantidadCuatro, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 60, -1));
-        getContentPane().add(txtCantidadCinco, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 60, -1));
-        getContentPane().add(txtCantidadSeis, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 60, -1));
-        getContentPane().add(txtCantidadSiete, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 60, -1));
-        getContentPane().add(txtCantidadOcho, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 60, -1));
-        getContentPane().add(txtCantidadNueve, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 60, -1));
-        getContentPane().add(txtCantidadDiez, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, 60, -1));
-        getContentPane().add(txtCantidadOnce, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, 60, -1));
-        getContentPane().add(checkBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, -1, -1));
-        getContentPane().add(checkBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, -1, -1));
-        getContentPane().add(checkBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, -1, -1));
-        getContentPane().add(checkBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, -1, -1));
-        getContentPane().add(checkBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, -1, -1));
-        getContentPane().add(checkBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, -1, -1));
-        getContentPane().add(checkBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, -1, -1));
-        getContentPane().add(checkBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, -1, -1));
-        getContentPane().add(checkBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, -1, -1));
-        getContentPane().add(checkBox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 390, -1, -1));
-        getContentPane().add(checkBox11, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 430, -1, -1));
+        txtCantidadTres.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCantidadTresActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtCantidadTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 50, -1));
+
+        txtCantidadCuatro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCantidadCuatroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtCantidadCuatro, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 50, -1));
+
+        txtCantidadCinco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCantidadCincoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtCantidadCinco, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 50, -1));
+
+        txtCantidadSeis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCantidadSeisActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtCantidadSeis, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 50, -1));
+
+        checkBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkBox1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(checkBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, -1, -1));
+
+        checkBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkBox2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(checkBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, -1, -1));
+
+        checkBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkBox3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(checkBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, -1, -1));
+
+        checkBox4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkBox4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(checkBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, -1, -1));
+
+        checkBox5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkBox5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(checkBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, -1, -1));
+
+        checkBox6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkBox6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(checkBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Guardar");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, -1, -1));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 0));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Limpiar");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 480, -1, -1));
+        cmdCancelar.setBackground(new java.awt.Color(0, 0, 0));
+        cmdCancelar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cmdCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        cmdCancelar.setText("Cancelar");
+        cmdCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCancelarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cmdCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 470, -1, -1));
 
-        setSize(new java.awt.Dimension(501, 561));
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setText("Precio");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setText("$ 20000");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setText("$ 15000");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, -1, 20));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel9.setText("$ 18000");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel12.setText("$ 16000");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, -1, 20));
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel13.setText("$ 20000");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, 60, 30));
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel14.setText("$ 17000");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel15.setText("Cant.");
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel17.setText("Cant.");
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, -1, 20));
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel18.setText("Cant.");
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, 20));
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel19.setText("Cant.");
+        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, -1, 20));
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel20.setText("Cant.");
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, -1, 20));
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel21.setText("Cant.");
+        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, -1, 20));
+
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_menú2.png"))); // NOI18N
+        jLabel22.setText("jLabel22");
+        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, -1));
+
+        setSize(new java.awt.Dimension(497, 561));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void checkBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBox1ActionPerformed
+        if (checkBox1.isSelected()) {
+            txtCantidadUno.setVisible(true);
+            jLabel15.setVisible(true);
+            Helper.mensaje(this, "¡Por Favor! Digite La Cantidad y Precione ENTER ", 1);
+            txtCantidadUno.requestFocusInWindow();
+        } else {
+            txtCantidadUno.setVisible(false);
+            jLabel15.setVisible(false);
+        }
+    }//GEN-LAST:event_checkBox1ActionPerformed
+
+    private void checkBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBox2ActionPerformed
+        if (checkBox2.isSelected()) {
+            txtCantidadDos.setVisible(true);
+            jLabel17.setVisible(true);
+            Helper.mensaje(this, "¡Por Favor! Digite La Cantidad y Precione ENTER ", 1);
+            txtCantidadDos.requestFocusInWindow();
+        } else {
+            txtCantidadDos.setVisible(false);
+            jLabel17.setVisible(false);
+        }
+    }//GEN-LAST:event_checkBox2ActionPerformed
+
+    private void checkBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBox3ActionPerformed
+        if (checkBox3.isSelected()) {
+            txtCantidadTres.setVisible(true);
+            jLabel18.setVisible(true);
+            Helper.mensaje(this, "¡Por Favor! Digite La Cantidad y Precione ENTER ", 1);
+            txtCantidadTres.requestFocusInWindow();
+        } else {
+            txtCantidadTres.setVisible(false);
+            jLabel18.setVisible(false);
+        }
+    }//GEN-LAST:event_checkBox3ActionPerformed
+
+    private void checkBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBox4ActionPerformed
+        if (checkBox4.isSelected()) {
+            txtCantidadCuatro.setVisible(true);
+            jLabel19.setVisible(true);
+            Helper.mensaje(this, "¡Por Favor! Digite La Cantidad y Precione ENTER ", 1);
+            txtCantidadCuatro.requestFocusInWindow();
+        } else {
+            txtCantidadCuatro.setVisible(false);
+            jLabel19.setVisible(false);
+        }
+    }//GEN-LAST:event_checkBox4ActionPerformed
+
+    private void checkBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBox5ActionPerformed
+        if (checkBox5.isSelected()) {
+            txtCantidadCinco.setVisible(true);
+            jLabel20.setVisible(true);
+            Helper.mensaje(this, "¡Por Favor! Digite La Cantidad y Precione ENTER ", 1);
+            txtCantidadCinco.requestFocusInWindow();
+        } else {
+            txtCantidadCinco.setVisible(false);
+            jLabel20.setVisible(false);
+        }
+    }//GEN-LAST:event_checkBox5ActionPerformed
+
+    private void checkBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBox6ActionPerformed
+        if (checkBox6.isSelected()) {
+            txtCantidadSeis.setVisible(true);
+            jLabel21.setVisible(true);
+            Helper.mensaje(this, "¡Por Favor! Digite La Cantidad y Precione ENTER ", 1);
+            txtCantidadSeis.requestFocusInWindow();
+        } else {
+            txtCantidadSeis.setVisible(false);
+            jLabel21.setVisible(false);
+        }
+    }//GEN-LAST:event_checkBox6ActionPerformed
+
+    private void txtCantidadUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadUnoActionPerformed
+        if (txtCantidadUno.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Digite La Cantidad y Precione ENTER ", 2);
+        } else {
+            txtCantidadUno.setVisible(false);
+            jLabel15.setVisible(false);
+        }
+    }//GEN-LAST:event_txtCantidadUnoActionPerformed
+
+    private void txtCantidadDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadDosActionPerformed
+        if (txtCantidadDos.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Digite La Cantidad y Precione ENTER ", 2);
+        } else {
+            txtCantidadDos.setVisible(false);
+            jLabel17.setVisible(false);
+        }
+    }//GEN-LAST:event_txtCantidadDosActionPerformed
+
+    private void txtCantidadTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadTresActionPerformed
+        if (txtCantidadTres.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Digite La Cantidad y Precione ENTER ", 2);
+        } else {
+            txtCantidadTres.setVisible(false);
+            jLabel18.setVisible(false);
+        }
+    }//GEN-LAST:event_txtCantidadTresActionPerformed
+
+    private void txtCantidadCuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadCuatroActionPerformed
+        if (txtCantidadCuatro.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Digite La Cantidad y Precione ENTER ", 2);
+        } else {
+            txtCantidadCuatro.setVisible(false);
+            jLabel19.setVisible(false);
+        }
+    }//GEN-LAST:event_txtCantidadCuatroActionPerformed
+
+    private void txtCantidadCincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadCincoActionPerformed
+        if (txtCantidadCinco.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Digite La Cantidad y Precione ENTER ", 2);
+        } else {
+            txtCantidadCinco.setVisible(false);
+            jLabel20.setVisible(false);
+        }
+    }//GEN-LAST:event_txtCantidadCincoActionPerformed
+
+    private void txtCantidadSeisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadSeisActionPerformed
+        if (txtCantidadSeis.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Digite La Cantidad y Precione ENTER ", 2);
+        } else {
+            txtCantidadSeis.setVisible(false);
+            jLabel21.setVisible(false);
+        }
+    }//GEN-LAST:event_txtCantidadSeisActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Pedido p;
+        ArrayList<Pedido> pedido = new ArrayList();
+        String producto;
+        int precio, cantidad, total;
+        if (checkBox1.isSelected()) {
+            cantidad = Integer.parseInt(txtCantidadUno.getText());
+            producto = jLabel1.getText();
+            precio = 20000;
+            total = precio * cantidad;
+            p = new Pedido(cantidad, producto, precio, total);
+            pedido.add(p);
+             Helper.llenarTabla(Opciones.tblPedido, pedido);
+        }
+        if (checkBox2.isSelected()) {
+            cantidad = Integer.parseInt(txtCantidadDos.getText());
+            producto = jLabel2.getText();
+            precio = 15000;
+            total = precio * cantidad;
+            p = new Pedido(cantidad, producto, precio, total);
+            pedido.add(p);
+            Helper.llenarTabla(Opciones.tblPedido, pedido);
+        }
+        if (checkBox3.isSelected()) {
+            cantidad = Integer.parseInt(txtCantidadTres.getText());
+            producto = jLabel5.getText();
+            precio = 18000;
+            total = precio * cantidad;
+            p = new Pedido(cantidad, producto, precio, total);
+            pedido.add(p);
+            Helper.llenarTabla(Opciones.tblPedido, pedido);
+        }
+        if (checkBox4.isSelected()) {
+            cantidad = Integer.parseInt(txtCantidadCuatro.getText());
+            producto = jLabel6.getText();
+            precio = 16000;
+            total = precio * cantidad;
+            p = new Pedido(cantidad, producto, precio, total);
+            pedido.add(p);
+            Helper.llenarTabla(Opciones.tblPedido, pedido);
+        }
+        if (checkBox5.isSelected()) {
+            cantidad = Integer.parseInt(txtCantidadCinco.getText());
+            producto = jLabel7.getText();
+            precio = 20000;
+            total = precio * cantidad;
+            p = new Pedido(cantidad, producto, precio, total);
+            pedido.add(p);
+            Helper.llenarTabla(Opciones.tblPedido, pedido);
+        }
+        if (checkBox6.isSelected()) {
+            cantidad = Integer.parseInt(txtCantidadCinco.getText());
+            producto = jLabel8.getText();
+            precio = 17000;
+            total = precio * cantidad;
+            p = new Pedido(cantidad, producto, precio, total);
+            pedido.add(p);
+            Helper.llenarTabla(Opciones.tblPedido, pedido);
+        }else {
+
+        }
+        Almuerzos.this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void cmdCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCancelarActionPerformed
+         Almuerzos.this.setVisible(false);
+    }//GEN-LAST:event_cmdCancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,23 +520,28 @@ public class Almuerzos extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel L;
     private javax.swing.JCheckBox checkBox1;
-    private javax.swing.JCheckBox checkBox10;
-    private javax.swing.JCheckBox checkBox11;
     private javax.swing.JCheckBox checkBox2;
     private javax.swing.JCheckBox checkBox3;
     private javax.swing.JCheckBox checkBox4;
     private javax.swing.JCheckBox checkBox5;
     private javax.swing.JCheckBox checkBox6;
-    private javax.swing.JCheckBox checkBox7;
-    private javax.swing.JCheckBox checkBox8;
-    private javax.swing.JCheckBox checkBox9;
+    private javax.swing.JButton cmdCancelar;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -230,13 +551,8 @@ public class Almuerzos extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField txtCantidadCinco;
     private javax.swing.JTextField txtCantidadCuatro;
-    private javax.swing.JTextField txtCantidadDiez;
     private javax.swing.JTextField txtCantidadDos;
-    private javax.swing.JTextField txtCantidadNueve;
-    private javax.swing.JTextField txtCantidadOcho;
-    private javax.swing.JTextField txtCantidadOnce;
     private javax.swing.JTextField txtCantidadSeis;
-    private javax.swing.JTextField txtCantidadSiete;
     private javax.swing.JTextField txtCantidadTres;
     private javax.swing.JTextField txtCantidadUno;
     // End of variables declaration//GEN-END:variables
