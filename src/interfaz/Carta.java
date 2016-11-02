@@ -30,17 +30,17 @@ public class Carta extends javax.swing.JDialog {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        cmdDesayunos = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        cmdAsados = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        cmdAlmuerzos = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        cmdHelados = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
+        cmdComidadRapidas = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        cmdBebidad = new javax.swing.JButton();
         cmdOK = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
@@ -55,106 +55,106 @@ public class Carta extends javax.swing.JDialog {
         jLabel1.setText("Desayunos");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/desayunos.png"))); // NOI18N
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setPreferredSize(new java.awt.Dimension(136, 88));
-        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/desayunos_click.png"))); // NOI18N
-        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/desayunos_mouse.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        cmdDesayunos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/desayunos.png"))); // NOI18N
+        cmdDesayunos.setBorderPainted(false);
+        cmdDesayunos.setContentAreaFilled(false);
+        cmdDesayunos.setPreferredSize(new java.awt.Dimension(136, 88));
+        cmdDesayunos.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/desayunos_click.png"))); // NOI18N
+        cmdDesayunos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/desayunos_mouse.png"))); // NOI18N
+        cmdDesayunos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                cmdDesayunosActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+        jPanel1.add(cmdDesayunos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 3, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 204, 204));
         jLabel2.setText("Asados");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, -1, -1));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Asados.png"))); // NOI18N
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(false);
-        jButton2.setPreferredSize(new java.awt.Dimension(136, 88));
-        jButton2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Asados_click.png"))); // NOI18N
-        jButton2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Asados_mouse.png"))); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        cmdAsados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Asados.png"))); // NOI18N
+        cmdAsados.setBorderPainted(false);
+        cmdAsados.setContentAreaFilled(false);
+        cmdAsados.setPreferredSize(new java.awt.Dimension(136, 88));
+        cmdAsados.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Asados_click.png"))); // NOI18N
+        cmdAsados.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Asados_mouse.png"))); // NOI18N
+        cmdAsados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                cmdAsadosActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, -1, -1));
+        jPanel1.add(cmdAsados, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 204, 204));
         jLabel3.setText("Almuerzos");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, 120, 20));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Corrientes.png"))); // NOI18N
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        jButton3.setPreferredSize(new java.awt.Dimension(132, 135));
-        jButton3.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Corrientes_click.png"))); // NOI18N
-        jButton3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Corrientes_mouse.png"))); // NOI18N
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        cmdAlmuerzos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Corrientes.png"))); // NOI18N
+        cmdAlmuerzos.setBorderPainted(false);
+        cmdAlmuerzos.setContentAreaFilled(false);
+        cmdAlmuerzos.setPreferredSize(new java.awt.Dimension(132, 135));
+        cmdAlmuerzos.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Corrientes_click.png"))); // NOI18N
+        cmdAlmuerzos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Corrientes_mouse.png"))); // NOI18N
+        cmdAlmuerzos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                cmdAlmuerzosActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 70, -1, -1));
+        jPanel1.add(cmdAlmuerzos, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 70, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Trebuchet MS", 3, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 204, 204));
         jLabel5.setText("Helados y Postres");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Helados.png"))); // NOI18N
-        jButton4.setBorderPainted(false);
-        jButton4.setContentAreaFilled(false);
-        jButton4.setPreferredSize(new java.awt.Dimension(183, 114));
-        jButton4.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Helados_click.png"))); // NOI18N
-        jButton4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Helados_mouse.png"))); // NOI18N
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        cmdHelados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Helados.png"))); // NOI18N
+        cmdHelados.setBorderPainted(false);
+        cmdHelados.setContentAreaFilled(false);
+        cmdHelados.setPreferredSize(new java.awt.Dimension(183, 114));
+        cmdHelados.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Helados_click.png"))); // NOI18N
+        cmdHelados.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Helados_mouse.png"))); // NOI18N
+        cmdHelados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                cmdHeladosActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
+        jPanel1.add(cmdHelados, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Trebuchet MS", 3, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 204, 204));
         jLabel6.setText("Comidas Rapidas");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 250, -1, -1));
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Comidas_Rapidas.png"))); // NOI18N
-        jButton6.setPreferredSize(new java.awt.Dimension(180, 124));
-        jButton6.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Comidas_Rapidas_Click.png"))); // NOI18N
-        jButton6.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Comidas_Rapidas_mouse.png"))); // NOI18N
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        cmdComidadRapidas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Comidas_Rapidas.png"))); // NOI18N
+        cmdComidadRapidas.setPreferredSize(new java.awt.Dimension(180, 124));
+        cmdComidadRapidas.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Comidas_Rapidas_Click.png"))); // NOI18N
+        cmdComidadRapidas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Comidas_Rapidas_mouse.png"))); // NOI18N
+        cmdComidadRapidas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                cmdComidadRapidasActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, -1, -1));
+        jPanel1.add(cmdComidadRapidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Trebuchet MS", 3, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 204, 204));
         jLabel7.setText("Bebidas");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, -1, -1));
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Bebidas.png"))); // NOI18N
-        jButton5.setBorderPainted(false);
-        jButton5.setContentAreaFilled(false);
-        jButton5.setPreferredSize(new java.awt.Dimension(151, 111));
-        jButton5.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Bebidas_click.png"))); // NOI18N
-        jButton5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Bebidas_mouse.png"))); // NOI18N
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        cmdBebidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Bebidas.png"))); // NOI18N
+        cmdBebidad.setBorderPainted(false);
+        cmdBebidad.setContentAreaFilled(false);
+        cmdBebidad.setPreferredSize(new java.awt.Dimension(151, 111));
+        cmdBebidad.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Bebidas_click.png"))); // NOI18N
+        cmdBebidad.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Bebidas_mouse.png"))); // NOI18N
+        cmdBebidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                cmdBebidadActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, -1, -1));
+        jPanel1.add(cmdBebidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, -1, -1));
 
         cmdOK.setBackground(new java.awt.Color(0, 0, 0));
         cmdOK.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -188,35 +188,35 @@ public class Carta extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Desayunos d = new Desayunos(null, true);
-        d.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void cmdDesayunosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdDesayunosActionPerformed
+        Desayunos a = new Desayunos(null, true);
+        a.setVisible(true);
+    }//GEN-LAST:event_cmdDesayunosActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void cmdAsadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdAsadosActionPerformed
         Asados a = new Asados(null, true);
         a.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_cmdAsadosActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        Almuerzos a= new Almuerzos(null, true);
+    private void cmdAlmuerzosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdAlmuerzosActionPerformed
+        Almuerzos a = new Almuerzos(null, true);
         a.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_cmdAlmuerzosActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        HeladosYPostres hp= new HeladosYPostres(null, true);
+    private void cmdHeladosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdHeladosActionPerformed
+        HeladosYPostres hp = new HeladosYPostres(null, true);
         hp.setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_cmdHeladosActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        Bebidas b= new Bebidas(null, true);
+    private void cmdBebidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBebidadActionPerformed
+        Bebidas b = new Bebidas(null, true);
         b.setVisible(true);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_cmdBebidadActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        ComidasRapidas cr= new ComidasRapidas(null ,true);
+    private void cmdComidadRapidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdComidadRapidasActionPerformed
+        ComidasRapidas cr = new ComidasRapidas(null, true);
         cr.setVisible(true);
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_cmdComidadRapidasActionPerformed
 
     private void cmdOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdOKActionPerformed
         Carta.this.setVisible(false);
@@ -265,13 +265,13 @@ public class Carta extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmdAlmuerzos;
+    private javax.swing.JButton cmdAsados;
+    private javax.swing.JButton cmdBebidad;
+    private javax.swing.JButton cmdComidadRapidas;
+    private javax.swing.JButton cmdDesayunos;
+    private javax.swing.JButton cmdHelados;
     private javax.swing.JButton cmdOK;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
