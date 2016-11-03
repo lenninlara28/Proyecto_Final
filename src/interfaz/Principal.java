@@ -5,8 +5,10 @@
  */
 package interfaz;
 
-
-
+import clases.Helper;
+import clases.Mesas;
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -17,10 +19,60 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
-   
+    ArrayList<Mesas> mesa;
     public Principal() {
         initComponents();
-       
+        int estado = Integer.parseInt(jlbM_Ocupada1.getText());
+        if (estado == 1) {
+            cmdMesa1.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
+            cmdMesa1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
+        } 
+
+
+        /*int estado;
+        
+        switch (estado) {
+            case 1:
+                cmdMesa1.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
+                cmdMesa1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
+                break;
+            case 2:
+                cmdMesa2.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
+                cmdMesa2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
+                break;
+            case 3:
+                cmdMesa3.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
+                cmdMesa3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
+                break;
+            case 4:
+                cmdMesa4.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
+                cmdMesa4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
+                break;
+            case 5:
+                cmdMesa5.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
+                cmdMesa5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
+                break;
+            case 6:
+                cmdMesa6.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
+                cmdMesa6.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
+                break;
+            case 7:
+                cmdMesa7.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
+                cmdMesa7.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
+                break;
+            case 8:
+                cmdMesa8.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
+                cmdMesa8.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
+                break;
+            case 9:
+                cmdMesa9.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
+                cmdMesa9.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
+                break;
+            case 10:
+                cmdMesa10.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
+                cmdMesa10.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
+                break;
+        }*/
     }
 
     /**
@@ -58,6 +110,16 @@ public class Principal extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         txtEstado = new javax.swing.JLabel();
+        jlbM_Ocupada1 = new javax.swing.JLabel();
+        jlbM_Ocupada2 = new javax.swing.JLabel();
+        jlbM_Ocupada3 = new javax.swing.JLabel();
+        jlbM_Ocupada4 = new javax.swing.JLabel();
+        jlbM_Ocupada5 = new javax.swing.JLabel();
+        jlbM_Ocupada6 = new javax.swing.JLabel();
+        jlbM_Ocupada7 = new javax.swing.JLabel();
+        jlbM_Ocupada8 = new javax.swing.JLabel();
+        jlbM_Ocupada9 = new javax.swing.JLabel();
+        jlbM_Ocupada10 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         mnOpciones = new javax.swing.JMenu();
         mnReportes = new javax.swing.JMenuItem();
@@ -253,6 +315,45 @@ public class Principal extends javax.swing.JFrame {
         txtEstado.setEnabled(false);
         jPanel1.add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 20, 30));
 
+        jlbM_Ocupada1.setText("0");
+        jPanel1.add(jlbM_Ocupada1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 20, -1));
+
+        jlbM_Ocupada2.setText("0");
+        jlbM_Ocupada2.setEnabled(false);
+        jPanel1.add(jlbM_Ocupada2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 20, -1));
+
+        jlbM_Ocupada3.setText("0");
+        jlbM_Ocupada3.setEnabled(false);
+        jPanel1.add(jlbM_Ocupada3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 20, -1));
+
+        jlbM_Ocupada4.setText("0");
+        jlbM_Ocupada4.setEnabled(false);
+        jPanel1.add(jlbM_Ocupada4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 20, -1));
+
+        jlbM_Ocupada5.setText("0");
+        jlbM_Ocupada5.setEnabled(false);
+        jPanel1.add(jlbM_Ocupada5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 20, -1));
+
+        jlbM_Ocupada6.setText("0");
+        jlbM_Ocupada6.setEnabled(false);
+        jPanel1.add(jlbM_Ocupada6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 20, -1));
+
+        jlbM_Ocupada7.setText("0");
+        jlbM_Ocupada7.setEnabled(false);
+        jPanel1.add(jlbM_Ocupada7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 20, -1));
+
+        jlbM_Ocupada8.setText("0");
+        jlbM_Ocupada8.setEnabled(false);
+        jPanel1.add(jlbM_Ocupada8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 20, -1));
+
+        jlbM_Ocupada9.setText("0");
+        jlbM_Ocupada9.setEnabled(false);
+        jPanel1.add(jlbM_Ocupada9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 20, -1));
+
+        jlbM_Ocupada10.setText("0");
+        jlbM_Ocupada10.setEnabled(false);
+        jPanel1.add(jlbM_Ocupada10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 20, -1));
+
         mnOpciones.setText("Opciones");
         mnOpciones.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
@@ -292,60 +393,83 @@ public class Principal extends javax.swing.JFrame {
         txtEstado.setText("1");
         Opciones a = new Opciones(this, true);
         a.setVisible(true);
+        /*int mesas = 1;
+        Mesas m = new Mesas(mesas);
+        mesa.add(m);
+        //System.out.println(""+m);
+        //Helper.llenarTablaPrueba(Opciones.tblPedido,mesa);*/
     }//GEN-LAST:event_cmdMesa1ActionPerformed
 
     private void cmdMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMesa2ActionPerformed
         txtEstado.setText("2");
         Opciones a = new Opciones(this, true);
         a.setVisible(true);
+        int mesas = 2;
+        Mesas m = new Mesas(mesas);
     }//GEN-LAST:event_cmdMesa2ActionPerformed
 
     private void cmdMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMesa3ActionPerformed
         txtEstado.setText("3");
         Opciones a = new Opciones(this, true);
         a.setVisible(true);
+        int mesas = 3;
+        Mesas m = new Mesas(mesas);
     }//GEN-LAST:event_cmdMesa3ActionPerformed
 
     private void cmdMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMesa4ActionPerformed
         txtEstado.setText("4");
         Opciones a = new Opciones(this, true);
         a.setVisible(true);
+        int mesas = 4;
+        Mesas m = new Mesas(mesas);
     }//GEN-LAST:event_cmdMesa4ActionPerformed
 
     private void cmdMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMesa5ActionPerformed
         txtEstado.setText("5");
         Opciones a = new Opciones(this, true);
         a.setVisible(true);
+        int mesas = 5;
+        Mesas m = new Mesas(mesas);
     }//GEN-LAST:event_cmdMesa5ActionPerformed
 
     private void cmdMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMesa6ActionPerformed
         txtEstado.setText("6");
         Opciones a = new Opciones(this, true);
         a.setVisible(true);
+        int mesas = 6;
+        Mesas m = new Mesas(mesas);
     }//GEN-LAST:event_cmdMesa6ActionPerformed
 
     private void cmdMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMesa7ActionPerformed
         txtEstado.setText("7");
         Opciones a = new Opciones(this, true);
         a.setVisible(true);
+        int mesas = 7;
+        Mesas m = new Mesas(mesas);
     }//GEN-LAST:event_cmdMesa7ActionPerformed
 
     private void cmdMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMesa8ActionPerformed
         txtEstado.setText("8");
         Opciones a = new Opciones(this, true);
         a.setVisible(true);
+        int mesas = 8;
+        Mesas m = new Mesas(mesas);
     }//GEN-LAST:event_cmdMesa8ActionPerformed
 
     private void cmdMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMesa9ActionPerformed
         txtEstado.setText("9");
         Opciones a = new Opciones(this, true);
         a.setVisible(true);
+        int mesas = 9;
+        Mesas m = new Mesas(mesas);
     }//GEN-LAST:event_cmdMesa9ActionPerformed
 
     private void cmdMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMesa10ActionPerformed
         txtEstado.setText("10");
         Opciones a = new Opciones(this, true);
         a.setVisible(true);
+        int mesas = 10;
+        Mesas m = new Mesas(mesas);
     }//GEN-LAST:event_cmdMesa10ActionPerformed
 
     private void mnSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnSalirMouseClicked
@@ -414,6 +538,16 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    public static javax.swing.JLabel jlbM_Ocupada1;
+    public static javax.swing.JLabel jlbM_Ocupada10;
+    public static javax.swing.JLabel jlbM_Ocupada2;
+    public static javax.swing.JLabel jlbM_Ocupada3;
+    public static javax.swing.JLabel jlbM_Ocupada4;
+    public static javax.swing.JLabel jlbM_Ocupada5;
+    public static javax.swing.JLabel jlbM_Ocupada6;
+    public static javax.swing.JLabel jlbM_Ocupada7;
+    public static javax.swing.JLabel jlbM_Ocupada8;
+    public static javax.swing.JLabel jlbM_Ocupada9;
     private javax.swing.JMenu mnOpciones;
     private javax.swing.JMenuItem mnReportes;
     private javax.swing.JMenu mnSalir;

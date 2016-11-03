@@ -5,6 +5,15 @@
  */
 package interfaz;
 
+import clases.Helper;
+import clases.Pedido;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author hp 14
@@ -14,6 +23,10 @@ public class Carta extends javax.swing.JDialog {
     /**
      * Creates new form Carta
      */
+    public static ArrayList<Pedido> p= new ArrayList();
+    public static Pedido pedido;
+    String ruta;
+    ObjectOutputStream salida;
     public Carta(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -219,6 +232,26 @@ public class Carta extends javax.swing.JDialog {
     }//GEN-LAST:event_cmdComidadRapidasActionPerformed
 
     private void cmdOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdOKActionPerformed
+        int mesas = Integer.parseInt(Principal.txtEstado.getText());
+        switch (mesas) {
+            case 1:
+                ruta = "src/datos/pedido_Mesa1.txt";
+                break;
+            case 2:
+                ruta = "src/datos/pedido_Mesa2.txt";
+                break;
+        }
+        try {
+            salida = new ObjectOutputStream(new FileOutputStream(ruta));
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+        try {
+            pedido.guardar(salida);
+        } catch (IOException ex) {
+            Logger.getLogger(Desayunos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Helper.llenarTabla(Opciones.tblPedido,p);
         Carta.this.setVisible(false);
     }//GEN-LAST:event_cmdOKActionPerformed
 

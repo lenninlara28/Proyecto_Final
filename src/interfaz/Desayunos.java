@@ -23,22 +23,32 @@ public class Desayunos extends javax.swing.JDialog {
     /**
      * Creates new form Desayunos
      */
-    /*String ruta;
+    String ruta;
     ObjectOutputStream salida;
-    ArrayList<Pedido> pedido;*/
+
     public Desayunos(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        /*ruta = "src/datos/pedido.txt";
-        try {
-            pedido = Helper.traerDatos(ruta);
-            salida = new ObjectOutputStream(new FileOutputStream(ruta));
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
+        int mesas = Integer.parseInt(Principal.txtEstado.getText());
+        switch (mesas) {
+            case 1:
+                ruta = "src/datos/pedido_Mesa1.txt";
+                try {
+                    salida = new ObjectOutputStream(new FileOutputStream(ruta));
+                } catch (IOException ex) {
+                    System.out.println(ex.getMessage());
+                }
+                break;
+            case 2:
+                ruta = "src/datos/pedido_Mesa2.txt";
+                try {
+                    salida = new ObjectOutputStream(new FileOutputStream(ruta));
+                } catch (IOException ex) {
+                    System.out.println(ex.getMessage());
+                }
+                break;
         }
-        Helper.volcado(salida, pedido);
-        Helper.llenarTabla(Opciones.tblPedido, ruta);*/
-        
+
         txtCantidad1.setVisible(false);
         jLabelCant1.setVisible(false);
         txtCantidad2.setVisible(false);
@@ -62,7 +72,6 @@ public class Desayunos extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -102,9 +111,6 @@ public class Desayunos extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("DESAYUNOS");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 762, -1));
 
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 255));
@@ -221,7 +227,7 @@ public class Desayunos extends javax.swing.JDialog {
                 txtCantidad1ActionPerformed(evt);
             }
         });
-        getContentPane().add(txtCantidad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, 30, 30));
+        getContentPane().add(txtCantidad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 30, 30));
 
         jLabelCant5.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabelCant5.setText("Cant");
@@ -298,7 +304,7 @@ public class Desayunos extends javax.swing.JDialog {
         lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_menú2.png"))); // NOI18N
         getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        setSize(new java.awt.Dimension(504, 586));
+        setSize(new java.awt.Dimension(494, 586));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -429,8 +435,6 @@ public class Desayunos extends javax.swing.JDialog {
     }//GEN-LAST:event_txtCantidad6ActionPerformed
 
     private void cmdGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdGuardarActionPerformed
-        Pedido p;
-        ArrayList<Pedido> pedido = new ArrayList();
         String producto;
         int precio, cantidad, total;
         if (checkBox1.isSelected()) {
@@ -438,61 +442,49 @@ public class Desayunos extends javax.swing.JDialog {
             producto = jLabel1.getText();
             precio = 5000;
             total = precio * cantidad;
-            p = new Pedido(cantidad, producto, precio, total);
-            pedido.add(p);
-            /*try {
-                p.guardar(salida);
-            } catch (IOException ex) {
-                Logger.getLogger(Desayunos.class.getName()).log(Level.SEVERE, null, ex);
-            }*/
-            Helper.llenarTabla(Opciones.tblPedido, pedido);
+            Carta.pedido = new Pedido(cantidad, producto, precio, total);
+            Carta.p.add(Carta.pedido);
         }
         if (checkBox2.isSelected()) {
             cantidad = Integer.parseInt(txtCantidad2.getText());
             producto = jLabel2.getText();
             precio = 5500;
             total = precio * cantidad;
-            p = new Pedido(cantidad, producto, precio, total);
-            pedido.add(p);
-            Helper.llenarTabla(Opciones.tblPedido, pedido);
+            Carta.pedido = new Pedido(cantidad, producto, precio, total);
+            Carta.p.add(Carta.pedido);
         }
         if (checkBox3.isSelected()) {
             cantidad = Integer.parseInt(txtCantidad3.getText());
             producto = jLabel3.getText();
             precio = 4000;
             total = precio * cantidad;
-            p = new Pedido(cantidad, producto, precio, total);
-            pedido.add(p);
-            Helper.llenarTabla(Opciones.tblPedido, pedido);
+            Carta.pedido = new Pedido(cantidad, producto, precio, total);
+            Carta.p.add(Carta.pedido);
         }
         if (checkBox4.isSelected()) {
             cantidad = Integer.parseInt(txtCantidad4.getText());
             producto = jLabel4.getText();
             precio = 3000;
             total = precio * cantidad;
-            p = new Pedido(cantidad, producto, precio, total);
-            pedido.add(p);
-            Helper.llenarTabla(Opciones.tblPedido, pedido);
+            Carta.pedido = new Pedido(cantidad, producto, precio, total);
+            Carta.p.add(Carta.pedido);
         }
         if (checkBox5.isSelected()) {
             cantidad = Integer.parseInt(txtCantidad5.getText());
             producto = jLabel5.getText();
             precio = 3500;
             total = precio * cantidad;
-            p = new Pedido(cantidad, producto, precio, total);
-            pedido.add(p);
-            Helper.llenarTabla(Opciones.tblPedido, pedido);
+            Carta.pedido = new Pedido(cantidad, producto, precio, total);
+            Carta.p.add(Carta.pedido);
         }
         if (checkBox6.isSelected()) {
             cantidad = Integer.parseInt(txtCantidad6.getText());
             producto = jLabel6.getText();
             precio = 5000;
             total = precio * cantidad;
-            p = new Pedido(cantidad, producto, precio, total);
-            pedido.add(p);
-            Helper.llenarTabla(Opciones.tblPedido, pedido);
+            Carta.pedido = new Pedido(cantidad, producto, precio, total);
+            Carta.p.add(Carta.pedido);
         } else {
-
         }
         Desayunos.this.setVisible(false);
     }//GEN-LAST:event_cmdGuardarActionPerformed
@@ -572,7 +564,6 @@ public class Desayunos extends javax.swing.JDialog {
     private javax.swing.JLabel jLabelCant4;
     private javax.swing.JLabel jLabelCant5;
     private javax.swing.JLabel jLabelCant6;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblFondo;
     private javax.swing.JTextField txtCantidad1;
     private javax.swing.JTextField txtCantidad2;

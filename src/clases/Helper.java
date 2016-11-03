@@ -89,7 +89,7 @@ public class Helper {
         }
 
     }
-
+    
     public static void llenarTabla(JTable tabla, ArrayList<Pedido> pedido) {
         DefaultTableModel tm;
         int nf;
