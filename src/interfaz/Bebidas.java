@@ -57,6 +57,7 @@ public class Bebidas extends javax.swing.JDialog {
         txtCantidad7.setVisible(false);
         jLabelCant7.setVisible(false);
         txtCantidad8.setVisible(false);
+        jLabelCant8.setVisible(false);
     }
 
     /**
