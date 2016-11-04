@@ -30,7 +30,7 @@ public class Desayunos extends javax.swing.JDialog {
     public Desayunos(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        int mesas = Integer.parseInt(Principal.txtEstado.getText());
+        /* int mesas = Integer.parseInt(Principal.txtEstado.getText());
         switch (mesas) {
             case 1:
                 ruta = "src/datos/pedido_Mesa1.txt";
@@ -48,7 +48,7 @@ public class Desayunos extends javax.swing.JDialog {
                     System.out.println(ex.getMessage());
                 }
                 break;
-        }
+        }*/
         txtCantidad1.setVisible(false);
         jLabelCant1.setVisible(false);
         txtCantidad2.setVisible(false);
@@ -212,6 +212,11 @@ public class Desayunos extends javax.swing.JDialog {
                 txtCantidad6ActionPerformed(evt);
             }
         });
+        txtCantidad6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCantidad6KeyTyped(evt);
+            }
+        });
         getContentPane().add(txtCantidad6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 30, 30));
 
         jLabelCant3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -227,6 +232,11 @@ public class Desayunos extends javax.swing.JDialog {
                 txtCantidad1ActionPerformed(evt);
             }
         });
+        txtCantidad1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCantidad1KeyTyped(evt);
+            }
+        });
         getContentPane().add(txtCantidad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 30, 30));
 
         jLabelCant5.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -236,6 +246,11 @@ public class Desayunos extends javax.swing.JDialog {
         txtCantidad2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCantidad2ActionPerformed(evt);
+            }
+        });
+        txtCantidad2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCantidad2KeyTyped(evt);
             }
         });
         getContentPane().add(txtCantidad2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 30, 30));
@@ -249,6 +264,11 @@ public class Desayunos extends javax.swing.JDialog {
                 txtCantidad3ActionPerformed(evt);
             }
         });
+        txtCantidad3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCantidad3KeyTyped(evt);
+            }
+        });
         getContentPane().add(txtCantidad3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 30, 30));
 
         jLabelCant1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -260,6 +280,11 @@ public class Desayunos extends javax.swing.JDialog {
                 txtCantidad4ActionPerformed(evt);
             }
         });
+        txtCantidad4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCantidad4KeyTyped(evt);
+            }
+        });
         getContentPane().add(txtCantidad4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 30, 30));
 
         jLabelCant2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -269,6 +294,11 @@ public class Desayunos extends javax.swing.JDialog {
         txtCantidad5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCantidad5ActionPerformed(evt);
+            }
+        });
+        txtCantidad5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCantidad5KeyTyped(evt);
             }
         });
         getContentPane().add(txtCantidad5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 30, 30));
@@ -387,6 +417,10 @@ public class Desayunos extends javax.swing.JDialog {
             txtCantidad1.setVisible(false);
             jLabelCant1.setVisible(false);
         }
+        if (txtCantidad1.getText().equals("0")) {
+            checkBox1.setSelected(false);
+            txtCantidad1.setText("");
+        }
     }//GEN-LAST:event_txtCantidad1ActionPerformed
 
     private void txtCantidad2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidad2ActionPerformed
@@ -395,6 +429,10 @@ public class Desayunos extends javax.swing.JDialog {
         } else {
             txtCantidad2.setVisible(false);
             jLabelCant2.setVisible(false);
+        }
+        if (txtCantidad2.getText().equals("0")) {
+            checkBox2.setSelected(false);
+            txtCantidad2.setText("");
         }
     }//GEN-LAST:event_txtCantidad2ActionPerformed
 
@@ -405,6 +443,10 @@ public class Desayunos extends javax.swing.JDialog {
             txtCantidad3.setVisible(false);
             jLabelCant3.setVisible(false);
         }
+        if (txtCantidad3.getText().equals("0")) {
+            checkBox3.setSelected(false);
+            txtCantidad3.setText("");
+        }
     }//GEN-LAST:event_txtCantidad3ActionPerformed
 
     private void txtCantidad4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidad4ActionPerformed
@@ -413,6 +455,10 @@ public class Desayunos extends javax.swing.JDialog {
         } else {
             txtCantidad4.setVisible(false);
             jLabelCant4.setVisible(false);
+        }
+        if (txtCantidad4.getText().equals("0")) {
+            checkBox4.setSelected(false);
+            txtCantidad4.setText("");
         }
     }//GEN-LAST:event_txtCantidad4ActionPerformed
 
@@ -423,6 +469,10 @@ public class Desayunos extends javax.swing.JDialog {
             txtCantidad5.setVisible(false);
             jLabelCant5.setVisible(false);
         }
+        if (txtCantidad5.getText().equals("0")) {
+            checkBox5.setSelected(false);
+            txtCantidad5.setText("");
+        }
     }//GEN-LAST:event_txtCantidad5ActionPerformed
 
     private void txtCantidad6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidad6ActionPerformed
@@ -431,6 +481,10 @@ public class Desayunos extends javax.swing.JDialog {
         } else {
             txtCantidad6.setVisible(false);
             jLabelCant6.setVisible(false);
+        }
+        if (txtCantidad6.getText().equals("0")) {
+            checkBox6.setSelected(false);
+            txtCantidad6.setText("");
         }
     }//GEN-LAST:event_txtCantidad6ActionPerformed
 
@@ -492,6 +546,54 @@ public class Desayunos extends javax.swing.JDialog {
     private void cmdCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCancelarActionPerformed
         Desayunos.this.setVisible(false);
     }//GEN-LAST:event_cmdCancelarActionPerformed
+
+    private void txtCantidad1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidad1KeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCantidad1KeyTyped
+
+    private void txtCantidad2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidad2KeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCantidad2KeyTyped
+
+    private void txtCantidad3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidad3KeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCantidad3KeyTyped
+
+    private void txtCantidad4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidad4KeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCantidad4KeyTyped
+
+    private void txtCantidad5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidad5KeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCantidad5KeyTyped
+
+    private void txtCantidad6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidad6KeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCantidad6KeyTyped
 
     /**
      * @param args the command line arguments

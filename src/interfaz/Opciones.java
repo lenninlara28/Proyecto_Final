@@ -33,6 +33,7 @@ public class Opciones extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         cmdEliminar.setEnabled(false);
+        cmdConfirmar.setEnabled(false);
     }
 
     /**
@@ -174,6 +175,7 @@ public class Opciones extends javax.swing.JDialog {
     private void cmdAbrirCartaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdAbrirCartaActionPerformed
         Carta a = new Carta(null, true);
         a.setVisible(true);
+        cmdConfirmar.setEnabled(true);
     }//GEN-LAST:event_cmdAbrirCartaActionPerformed
 
     private void tblPedidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPedidoMouseClicked
