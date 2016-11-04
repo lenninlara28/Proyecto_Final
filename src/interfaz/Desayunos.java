@@ -7,6 +7,7 @@ package interfaz;
 
 import clases.Helper;
 import clases.Pedido;
+import static interfaz.Carta.pedido;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -48,7 +49,6 @@ public class Desayunos extends javax.swing.JDialog {
                 }
                 break;
         }
-
         txtCantidad1.setVisible(false);
         jLabelCant1.setVisible(false);
         txtCantidad2.setVisible(false);
