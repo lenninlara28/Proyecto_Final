@@ -20,6 +20,7 @@ public class ComidasRapidas extends javax.swing.JDialog {
      */
     String ruta;
     ObjectOutputStream salida;
+
     public ComidasRapidas(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -51,7 +52,9 @@ public class ComidasRapidas extends javax.swing.JDialog {
         txtCantidadCuatro.setVisible(false);
         jLabel10.setVisible(false);
         txtCantidadCinco.setVisible(false);
+        txtCantidadSeis.setVisible(false);
         jLabel6.setVisible(false);
+        jLabel20.setVisible(false);
     }
 
     /**
@@ -91,33 +94,38 @@ public class ComidasRapidas extends javax.swing.JDialog {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        CheckBox6 = new javax.swing.JCheckBox();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        txtCantidadSeis = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("ComidasRapidas");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
         jLabel1.setText("Arepa");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 255));
         jLabel2.setText("Hamburguesa");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 255));
         jLabel3.setText("Pizza");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 255));
         jLabel4.setText("Perro Caliente");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 255));
         jLabel5.setText("Gratinado");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, -1, -1));
@@ -226,7 +234,7 @@ public class ComidasRapidas extends javax.swing.JDialog {
                 cmdGuardarActionPerformed(evt);
             }
         });
-        getContentPane().add(cmdGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, -1, -1));
+        getContentPane().add(cmdGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 440, -1, -1));
 
         cmdCancelar.setBackground(new java.awt.Color(0, 0, 0));
         cmdCancelar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -237,7 +245,7 @@ public class ComidasRapidas extends javax.swing.JDialog {
                 cmdCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(cmdCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, -1, -1));
+        getContentPane().add(cmdCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("Cant.");
@@ -283,16 +291,48 @@ public class ComidasRapidas extends javax.swing.JDialog {
         jLabel16.setText("$ 11000");
         getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 344, -1, 20));
 
+        jLabel18.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel18.setText("Salchipapa Sencilla");
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, -1, -1));
+
+        CheckBox6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckBox6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(CheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, -1, -1));
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel19.setText("$ 5000");
+        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 390, -1, 20));
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel20.setText("Cant.");
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, -1, 20));
+
+        txtCantidadSeis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCantidadSeisActionPerformed(evt);
+            }
+        });
+        txtCantidadSeis.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCantidadSeisKeyTyped(evt);
+            }
+        });
+        getContentPane().add(txtCantidadSeis, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 40, -1));
+
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_menú2.png"))); // NOI18N
         jLabel17.setText("jLabel17");
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, -1));
 
-        setSize(new java.awt.Dimension(474, 500));
+        setSize(new java.awt.Dimension(474, 588));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void CheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBox1ActionPerformed
-         if (CheckBox1.isSelected()) {
+        if (CheckBox1.isSelected()) {
             txtCantidadUno.setVisible(true);
             jLabel7.setVisible(true);
             Helper.mensaje(this, "¡Por Favor! Digite La Cantidad y Precione ENTER ", 1);
@@ -417,7 +457,7 @@ public class ComidasRapidas extends javax.swing.JDialog {
     }//GEN-LAST:event_txtCantidadCincoActionPerformed
 
     private void txtCantidadUnoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadUnoKeyTyped
-         char c = evt.getKeyChar();
+        char c = evt.getKeyChar();
         if (!Character.isDigit(c)) {
             getToolkit().beep();
             evt.consume();
@@ -425,7 +465,7 @@ public class ComidasRapidas extends javax.swing.JDialog {
     }//GEN-LAST:event_txtCantidadUnoKeyTyped
 
     private void txtCantidadDosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadDosKeyTyped
-         char c = evt.getKeyChar();
+        char c = evt.getKeyChar();
         if (!Character.isDigit(c)) {
             getToolkit().beep();
             evt.consume();
@@ -433,7 +473,7 @@ public class ComidasRapidas extends javax.swing.JDialog {
     }//GEN-LAST:event_txtCantidadDosKeyTyped
 
     private void txtCantidadTresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadTresKeyTyped
-         char c = evt.getKeyChar();
+        char c = evt.getKeyChar();
         if (!Character.isDigit(c)) {
             getToolkit().beep();
             evt.consume();
@@ -441,7 +481,7 @@ public class ComidasRapidas extends javax.swing.JDialog {
     }//GEN-LAST:event_txtCantidadTresKeyTyped
 
     private void txtCantidadCuatroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadCuatroKeyTyped
-         char c = evt.getKeyChar();
+        char c = evt.getKeyChar();
         if (!Character.isDigit(c)) {
             getToolkit().beep();
             evt.consume();
@@ -449,7 +489,7 @@ public class ComidasRapidas extends javax.swing.JDialog {
     }//GEN-LAST:event_txtCantidadCuatroKeyTyped
 
     private void txtCantidadCincoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadCincoKeyTyped
-         char c = evt.getKeyChar();
+        char c = evt.getKeyChar();
         if (!Character.isDigit(c)) {
             getToolkit().beep();
             evt.consume();
@@ -499,7 +539,14 @@ public class ComidasRapidas extends javax.swing.JDialog {
             Carta.pedido = new Pedido(cantidad, producto, precio, total);
             Carta.p.add(Carta.pedido);
         }
-        else {
+        if (CheckBox6.isSelected()) {
+            cantidad = Integer.parseInt(txtCantidadSeis.getText());
+            producto = jLabel18.getText();
+            precio = 5000;
+            total = precio * cantidad;
+            Carta.pedido = new Pedido(cantidad, producto, precio, total);
+            Carta.p.add(Carta.pedido);
+        } else {
         }
         ComidasRapidas.this.setVisible(false);
     }//GEN-LAST:event_cmdGuardarActionPerformed
@@ -507,6 +554,39 @@ public class ComidasRapidas extends javax.swing.JDialog {
     private void cmdCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCancelarActionPerformed
         ComidasRapidas.this.setVisible(false);
     }//GEN-LAST:event_cmdCancelarActionPerformed
+
+    private void CheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBox6ActionPerformed
+        if (CheckBox6.isSelected()) {
+            txtCantidadSeis.setVisible(true);
+            jLabel20.setVisible(true);
+            Helper.mensaje(this, "¡Por Favor! Digite La Cantidad y Precione ENTER ", 1);
+            txtCantidadSeis.requestFocusInWindow();
+        } else {
+            txtCantidadSeis.setVisible(false);
+            jLabel20.setVisible(false);
+        }
+    }//GEN-LAST:event_CheckBox6ActionPerformed
+
+    private void txtCantidadSeisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadSeisActionPerformed
+        if (txtCantidadSeis.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Digite La Cantidad y Precione ENTER ", 2);
+        } else {
+            txtCantidadSeis.setVisible(false);
+            jLabel20.setVisible(false);
+        }
+        if (txtCantidadSeis.getText().equals("0")) {
+            CheckBox6.setSelected(false);
+            txtCantidadSeis.setText("");
+        }
+    }//GEN-LAST:event_txtCantidadSeisActionPerformed
+
+    private void txtCantidadSeisKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadSeisKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCantidadSeisKeyTyped
 
     /**
      * @param args the command line arguments
@@ -556,6 +636,7 @@ public class ComidasRapidas extends javax.swing.JDialog {
     private javax.swing.JCheckBox CheckBox3;
     private javax.swing.JCheckBox CheckBox4;
     private javax.swing.JCheckBox CheckBox5;
+    private javax.swing.JCheckBox CheckBox6;
     private javax.swing.JButton cmdCancelar;
     private javax.swing.JButton cmdGuardar;
     private javax.swing.JLabel jLabel1;
@@ -567,7 +648,10 @@ public class ComidasRapidas extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -578,6 +662,7 @@ public class ComidasRapidas extends javax.swing.JDialog {
     private javax.swing.JTextField txtCantidadCinco;
     private javax.swing.JTextField txtCantidadCuatro;
     private javax.swing.JTextField txtCantidadDos;
+    private javax.swing.JTextField txtCantidadSeis;
     private javax.swing.JTextField txtCantidadTres;
     private javax.swing.JTextField txtCantidadUno;
     // End of variables declaration//GEN-END:variables
