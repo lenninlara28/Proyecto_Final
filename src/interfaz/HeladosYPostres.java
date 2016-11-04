@@ -23,10 +23,11 @@ public class HeladosYPostres extends javax.swing.JDialog {
      */
     String ruta;
     ObjectOutputStream salida;
+
     public HeladosYPostres(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        int mesas = Integer.parseInt(Principal.txtEstado.getText());
+        /*int mesas = Integer.parseInt(Principal.txtEstado.getText());
         switch (mesas) {
             case 1:
                 ruta = "src/datos/pedido_Mesa1.txt";
@@ -44,7 +45,7 @@ public class HeladosYPostres extends javax.swing.JDialog {
                     System.out.println(ex.getMessage());
                 }
                 break;
-        }
+        }*/
         txtCantidadUno.setVisible(false);
         jLabel10.setVisible(false);
         txtCantidadDos.setVisible(false);
@@ -61,8 +62,7 @@ public class HeladosYPostres extends javax.swing.JDialog {
         jLabel16.setVisible(false);
         txtCantidad8.setVisible(false);
         jLabel9.setVisible(false);
-                
-                
+
     }
 
     /**
@@ -78,7 +78,6 @@ public class HeladosYPostres extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabelSiete = new javax.swing.JLabel();
@@ -124,162 +123,157 @@ public class HeladosYPostres extends javax.swing.JDialog {
         setTitle("Helados Y Postres");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
         jLabel1.setText("Copa Ternura");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 255));
         jLabel2.setText("Copa Encanto");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 255));
         jLabel3.setText("Brownie Flow");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 255));
         jLabel4.setText("Copa Corazón");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel7.setText(" Helados y Postres");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 255));
         jLabel5.setText("Chocolate con crema de mora");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, -1, 40));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, 20));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 255));
         jLabel6.setText("Tres leches relleno de frutas");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, -1, -1));
 
-        jLabelSiete.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelSiete.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabelSiete.setForeground(new java.awt.Color(0, 0, 255));
         jLabelSiete.setText("Rollitos de chocolates MontBlanco");
-        getContentPane().add(jLabelSiete, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 440, -1, 20));
+        getContentPane().add(jLabelSiete, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, -1, 20));
 
-        jLabelOcho.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelOcho.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabelOcho.setForeground(new java.awt.Color(0, 0, 255));
         jLabelOcho.setText("Zumo naranja natural");
-        getContentPane().add(jLabelOcho, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 500, -1, -1));
+        getContentPane().add(jLabelOcho, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 471, -1, 20));
 
         txtCantidadUno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCantidadUnoActionPerformed(evt);
             }
         });
-        getContentPane().add(txtCantidadUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 30, -1));
+        getContentPane().add(txtCantidadUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 30, -1));
 
         txtCantidadDos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCantidadDosActionPerformed(evt);
             }
         });
-        getContentPane().add(txtCantidadDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 30, -1));
+        getContentPane().add(txtCantidadDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 30, -1));
 
         txtCantidadTres.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCantidadTresActionPerformed(evt);
             }
         });
-        getContentPane().add(txtCantidadTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 30, 20));
+        getContentPane().add(txtCantidadTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 30, 20));
 
         txtCantidadCuatro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCantidadCuatroActionPerformed(evt);
             }
         });
-        getContentPane().add(txtCantidadCuatro, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 30, -1));
+        getContentPane().add(txtCantidadCuatro, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 30, -1));
 
         txtCantidad5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCantidad5ActionPerformed(evt);
             }
         });
-        getContentPane().add(txtCantidad5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 30, -1));
+        getContentPane().add(txtCantidad5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 30, -1));
 
         txtCantidad6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCantidad6ActionPerformed(evt);
             }
         });
-        getContentPane().add(txtCantidad6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 30, -1));
+        getContentPane().add(txtCantidad6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 330, 30, -1));
 
         txtCantidad7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCantidad7ActionPerformed(evt);
             }
         });
-        getContentPane().add(txtCantidad7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 420, 30, -1));
+        getContentPane().add(txtCantidad7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 30, -1));
 
         txtCantidad8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCantidad8ActionPerformed(evt);
             }
         });
-        getContentPane().add(txtCantidad8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 470, 30, -1));
+        getContentPane().add(txtCantidad8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 450, 30, -1));
 
         CheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CheckBox1ActionPerformed(evt);
             }
         });
-        getContentPane().add(CheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, -1, -1));
+        getContentPane().add(CheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, -1, -1));
 
         CheckBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CheckBox2ActionPerformed(evt);
             }
         });
-        getContentPane().add(CheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, -1, -1));
+        getContentPane().add(CheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, -1, -1));
 
         CheckBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CheckBox3ActionPerformed(evt);
             }
         });
-        getContentPane().add(CheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
+        getContentPane().add(CheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, -1, -1));
 
         CheckBox4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CheckBox4ActionPerformed(evt);
             }
         });
-        getContentPane().add(CheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, -1, -1));
+        getContentPane().add(CheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
 
         CheckBox5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CheckBox5ActionPerformed(evt);
             }
         });
-        getContentPane().add(CheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, -1, -1));
+        getContentPane().add(CheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
 
         CheckBox6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CheckBox6ActionPerformed(evt);
             }
         });
-        getContentPane().add(CheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, -1, -1));
+        getContentPane().add(CheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, -1, -1));
 
         CheckBox7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CheckBox7ActionPerformed(evt);
             }
         });
-        getContentPane().add(CheckBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, -1, -1));
+        getContentPane().add(CheckBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, -1, -1));
 
         CheckBox8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CheckBox8ActionPerformed(evt);
             }
         });
-        getContentPane().add(CheckBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 500, -1, -1));
+        getContentPane().add(CheckBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 470, -1, -1));
 
         cmdGuardar.setBackground(new java.awt.Color(0, 0, 0));
         cmdGuardar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -290,7 +284,7 @@ public class HeladosYPostres extends javax.swing.JDialog {
                 cmdGuardarActionPerformed(evt);
             }
         });
-        getContentPane().add(cmdGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 520, -1, -1));
+        getContentPane().add(cmdGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 510, -1, 20));
 
         cmdCancelar.setBackground(new java.awt.Color(0, 0, 0));
         cmdCancelar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -301,81 +295,80 @@ public class HeladosYPostres extends javax.swing.JDialog {
                 cmdCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(cmdCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 520, -1, -1));
+        getContentPane().add(cmdCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 510, -1, 20));
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel9.setText("Cant.");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 470, 50, 20));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 450, 40, 20));
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel10.setText("Cant.");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, -1, 20));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, -1, 20));
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel11.setText("Cant.");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, -1, 20));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, -1, 20));
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel12.setText("Cant.");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, -1, -1));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, -1, -1));
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel13.setText("Cant.");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, -1, 20));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, -1, 20));
 
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel14.setText("Cant.");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, -1, -1));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, -1, -1));
 
-        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel15.setText("Cant.");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 360, 40, 20));
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, 40, 20));
 
-        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel16.setText("Cant.");
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 410, 40, 30));
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, 40, 30));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel8.setText("Precio");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel17.setText("$ 6000");
-        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, -1, -1));
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, -1, -1));
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel18.setText("$ 7000");
-        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, -1, -1));
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, -1, -1));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel19.setText("$ 9000");
-        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, -1, -1));
+        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, -1, -1));
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel20.setText("$ 6500");
-        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, -1, 20));
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, -1, 20));
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel21.setText("$ 5000");
-        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, -1, 20));
+        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, -1, 20));
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel22.setText("$ 6000");
-        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 390, -1, -1));
+        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 360, -1, -1));
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel23.setText("$ 7500");
-        getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 440, -1, 20));
+        getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 410, -1, 20));
 
         jLabel24.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel24.setText("$ 4500");
-        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 490, -1, 30));
+        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 470, -1, 30));
 
         jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_menú2.png"))); // NOI18N
-        jLabel25.setText("jLabel25");
-        getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 480, 640));
+        getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -50, 480, 640));
 
-        setSize(new java.awt.Dimension(499, 594));
+        setSize(new java.awt.Dimension(492, 583));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -548,7 +541,7 @@ public class HeladosYPostres extends javax.swing.JDialog {
     }//GEN-LAST:event_txtCantidad8ActionPerformed
 
     private void cmdGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdGuardarActionPerformed
-         String producto;
+        String producto;
         int precio, cantidad, total;
         if (CheckBox1.isSelected()) {
             cantidad = Integer.parseInt(txtCantidadUno.getText());
@@ -613,11 +606,11 @@ public class HeladosYPostres extends javax.swing.JDialog {
             total = precio * cantidad;
             Carta.pedido = new Pedido(cantidad, producto, precio, total);
             Carta.p.add(Carta.pedido);
-        }else {
-            
+        } else {
+
         }
         HeladosYPostres.this.setVisible(false);
-                                             
+
     }//GEN-LAST:event_cmdGuardarActionPerformed
 
     private void cmdCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCancelarActionPerformed
@@ -699,7 +692,6 @@ public class HeladosYPostres extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelOcho;

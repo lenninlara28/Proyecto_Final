@@ -433,8 +433,6 @@ public class Almuerzos extends javax.swing.JDialog {
     }//GEN-LAST:event_txtCantidadSeisActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Pedido p;
-        ArrayList<Pedido> pedido = new ArrayList();
         String producto;
         int precio, cantidad, total;
         if (checkBox1.isSelected()) {
@@ -442,54 +440,48 @@ public class Almuerzos extends javax.swing.JDialog {
             producto = jLabel1.getText();
             precio = 20000;
             total = precio * cantidad;
-            p = new Pedido(cantidad, producto, precio, total);
-            pedido.add(p);
-             Helper.llenarTabla(Opciones.tblPedido, pedido);
+            Carta.pedido = new Pedido(cantidad, producto, precio, total);
+            Carta.p.add(Carta.pedido);
         }
         if (checkBox2.isSelected()) {
             cantidad = Integer.parseInt(txtCantidadDos.getText());
             producto = jLabel2.getText();
             precio = 15000;
             total = precio * cantidad;
-            p = new Pedido(cantidad, producto, precio, total);
-            pedido.add(p);
-            Helper.llenarTabla(Opciones.tblPedido, pedido);
+            Carta.pedido = new Pedido(cantidad, producto, precio, total);
+            Carta.p.add(Carta.pedido);
         }
         if (checkBox3.isSelected()) {
             cantidad = Integer.parseInt(txtCantidadTres.getText());
             producto = jLabel5.getText();
             precio = 18000;
             total = precio * cantidad;
-            p = new Pedido(cantidad, producto, precio, total);
-            pedido.add(p);
-            Helper.llenarTabla(Opciones.tblPedido, pedido);
+            Carta.pedido = new Pedido(cantidad, producto, precio, total);
+            Carta.p.add(Carta.pedido);
         }
         if (checkBox4.isSelected()) {
             cantidad = Integer.parseInt(txtCantidadCuatro.getText());
             producto = jLabel6.getText();
             precio = 16000;
             total = precio * cantidad;
-            p = new Pedido(cantidad, producto, precio, total);
-            pedido.add(p);
-            Helper.llenarTabla(Opciones.tblPedido, pedido);
+            Carta.pedido = new Pedido(cantidad, producto, precio, total);
+            Carta.p.add(Carta.pedido);
         }
         if (checkBox5.isSelected()) {
             cantidad = Integer.parseInt(txtCantidadCinco.getText());
             producto = jLabel7.getText();
             precio = 20000;
             total = precio * cantidad;
-            p = new Pedido(cantidad, producto, precio, total);
-            pedido.add(p);
-            Helper.llenarTabla(Opciones.tblPedido, pedido);
+            Carta.pedido = new Pedido(cantidad, producto, precio, total);
+            Carta.p.add(Carta.pedido);
         }
         if (checkBox6.isSelected()) {
             cantidad = Integer.parseInt(txtCantidadCinco.getText());
             producto = jLabel8.getText();
             precio = 17000;
             total = precio * cantidad;
-            p = new Pedido(cantidad, producto, precio, total);
-            pedido.add(p);
-            Helper.llenarTabla(Opciones.tblPedido, pedido);
+            Carta.pedido = new Pedido(cantidad, producto, precio, total);
+            Carta.p.add(Carta.pedido);
         }else {
 
         }
