@@ -8,16 +8,7 @@ package interfaz;
 import clases.Administrador;
 import clases.Helper;
 import clases.Mesero;
-import static interfaz.Principal.cmdMesa1;
-import static interfaz.Principal.cmdMesa10;
-import static interfaz.Principal.cmdMesa2;
-import static interfaz.Principal.cmdMesa3;
-import static interfaz.Principal.cmdMesa4;
-import static interfaz.Principal.cmdMesa5;
-import static interfaz.Principal.cmdMesa6;
-import static interfaz.Principal.cmdMesa7;
-import static interfaz.Principal.cmdMesa8;
-import static interfaz.Principal.cmdMesa9;
+import static interfaz.Principal.*;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import javax.swing.JButton;
@@ -137,7 +128,7 @@ public class Login_Mesero extends javax.swing.JDialog {
                 JButton botonesA[] = {cmdMesa1, cmdMesa2, cmdMesa3, cmdMesa4, cmdMesa5, cmdMesa6, cmdMesa7, cmdMesa8, cmdMesa9, cmdMesa10};
                 Helper.habilitarBotones(botonesA);
                 Login_Mesero.this.setVisible(false);
-                Principal.jlbIngreso.setText("Mesero");
+                jlbIngreso.setText("Mesero");
                 aux = 1;
             }
         }

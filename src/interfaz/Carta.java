@@ -9,6 +9,7 @@ import clases.Helper;
 import clases.Pedido;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import static interfaz.Opciones.*;
 
 /**
  *
@@ -233,14 +234,19 @@ public class Carta extends javax.swing.JDialog {
             if (aux == JOptionPane.YES_OPTION) {
                 Carta.this.setVisible(false);
             } else {
-
+                
             }
         } else {
-            Opciones.cmdConfirmar.setEnabled(true);
-            Helper.volcado(Opciones.salida, p);
-            Helper.llenarTabla(Opciones.tblPedido, p);
+            
+            Helper.llenarTabla(tblPedido, p);
             Carta.this.setVisible(false);
         }
+        int aux = Integer.parseInt(Principal.jlbAux.getText());
+        ArrayList<Pedido> pe = Helper.traerDatos(ruta);
+        if (!pe.isEmpty()) {
+            cmdAggProducto.setEnabled(true);
+        }
+        cmdConfirmar.setEnabled(true);
     }//GEN-LAST:event_cmdOKActionPerformed
 
     /**
