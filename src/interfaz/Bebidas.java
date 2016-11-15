@@ -7,7 +7,6 @@ package interfaz;
 
 import clases.Helper;
 import clases.Pedido;
-import java.io.ObjectOutputStream;
 
 /**
  *
@@ -18,30 +17,9 @@ public class Bebidas extends javax.swing.JDialog {
     /**
      * Creates new form Bebidas
      */
-    String ruta;
-    ObjectOutputStream salida;
     public Bebidas(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        /* int mesas = Integer.parseInt(Principal.txtEstado.getText());
-        switch (mesas) {
-            case 1:
-                ruta = "src/datos/pedido_Mesa1.txt";
-                try {
-                    salida = new ObjectOutputStream(new FileOutputStream(ruta));
-                } catch (IOException ex) {
-                    System.out.println(ex.getMessage());
-                }
-                break;
-            case 2:
-                ruta = "src/datos/pedido_Mesa2.txt";
-                try {
-                    salida = new ObjectOutputStream(new FileOutputStream(ruta));
-                } catch (IOException ex) {
-                    System.out.println(ex.getMessage());
-                }
-                break;
-        }*/
         txtCantidad1.setVisible(false);
         jLabelCant1.setVisible(false);
         txtCantidad2.setVisible(false);
@@ -409,7 +387,7 @@ public class Bebidas extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBox1ActionPerformed
-         if (CheckBox1.isSelected()) {
+        if (CheckBox1.isSelected()) {
             txtCantidad1.setVisible(true);
             jLabelCant1.setVisible(true);
             Helper.mensaje(this, "¡Por Favor! Digite La Cantidad y Precione ENTER ", 1);
@@ -544,7 +522,7 @@ public class Bebidas extends javax.swing.JDialog {
     }//GEN-LAST:event_txtCantidad3ActionPerformed
 
     private void txtCantidad4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidad4ActionPerformed
-         if (txtCantidad4.getText().trim().isEmpty()) {
+        if (txtCantidad4.getText().trim().isEmpty()) {
             Helper.mensaje(this, "Digite La Cantidad y Precione ENTER ", 2);
         } else {
             txtCantidad4.setVisible(false);
@@ -673,7 +651,7 @@ public class Bebidas extends javax.swing.JDialog {
     }//GEN-LAST:event_txtCantidad8KeyTyped
 
     private void cmdGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdGuardarActionPerformed
-         String producto;
+        String producto;
         int precio, cantidad, total;
         if (CheckBox1.isSelected()) {
             cantidad = Integer.parseInt(txtCantidad1.getText());

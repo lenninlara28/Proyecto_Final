@@ -7,10 +7,6 @@ package interfaz;
 
 import clases.Helper;
 import clases.Pedido;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.util.ArrayList;
 
 /**
  *
@@ -21,31 +17,9 @@ public class Almuerzos extends javax.swing.JDialog {
     /**
      * Creates new form Almuerzos
      */
-    String ruta;
-    ObjectOutputStream salida;
-
     public Almuerzos(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        /* int mesas = Integer.parseInt(Principal.txtEstado.getText());
-        switch (mesas) {
-            case 1:
-                ruta = "src/datos/pedido_Mesa1.txt";
-                try {
-                    salida = new ObjectOutputStream(new FileOutputStream(ruta));
-                } catch (IOException ex) {
-                    System.out.println(ex.getMessage());
-                }
-                break;
-            case 2:
-                ruta = "src/datos/pedido_Mesa2.txt";
-                try {
-                    salida = new ObjectOutputStream(new FileOutputStream(ruta));
-                } catch (IOException ex) {
-                    System.out.println(ex.getMessage());
-                }
-                break;
-        }*/
         txtCantidadUno.setVisible(false);
         jLabel15.setVisible(false);
         txtCantidadDos.setVisible(false);

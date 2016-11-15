@@ -7,7 +7,6 @@ package interfaz;
 
 import clases.Helper;
 import clases.Pedido;
-import java.io.ObjectOutputStream;
 
 /**
  *
@@ -18,31 +17,9 @@ public class ComidasRapidas extends javax.swing.JDialog {
     /**
      * Creates new form ComidasRapidas
      */
-    String ruta;
-    ObjectOutputStream salida;
-
     public ComidasRapidas(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        /* int mesas = Integer.parseInt(Principal.txtEstado.getText());
-        switch (mesas) {
-            case 1:
-                ruta = "src/datos/pedido_Mesa1.txt";
-                try {
-                    salida = new ObjectOutputStream(new FileOutputStream(ruta));
-                } catch (IOException ex) {
-                    System.out.println(ex.getMessage());
-                }
-                break;
-            case 2:
-                ruta = "src/datos/pedido_Mesa2.txt";
-                try {
-                    salida = new ObjectOutputStream(new FileOutputStream(ruta));
-                } catch (IOException ex) {
-                    System.out.println(ex.getMessage());
-                }
-                break;
-        }*/
         txtCantidadUno.setVisible(false);
         jLabel7.setVisible(false);
         txtCantidadDos.setVisible(false);

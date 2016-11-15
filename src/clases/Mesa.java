@@ -12,11 +12,11 @@ import java.io.ObjectOutputStream;
  *
  * @author hp 14
  */
-public class Mesas implements java.io.Serializable {
+public class Mesa implements java.io.Serializable {
 
     private int mesa;
 
-    public Mesas(int mesa) {
+    public Mesa(int mesa) {
         this.mesa = mesa;
     }
 

@@ -8,12 +8,6 @@ package interfaz;
 import clases.Helper;
 import clases.Pedido;
 import static interfaz.Carta.pedido;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -24,31 +18,9 @@ public class Desayunos extends javax.swing.JDialog {
     /**
      * Creates new form Desayunos
      */
-    String ruta;
-    ObjectOutputStream salida;
-
     public Desayunos(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        /* int mesas = Integer.parseInt(Principal.txtEstado.getText());
-        switch (mesas) {
-            case 1:
-                ruta = "src/datos/pedido_Mesa1.txt";
-                try {
-                    salida = new ObjectOutputStream(new FileOutputStream(ruta));
-                } catch (IOException ex) {
-                    System.out.println(ex.getMessage());
-                }
-                break;
-            case 2:
-                ruta = "src/datos/pedido_Mesa2.txt";
-                try {
-                    salida = new ObjectOutputStream(new FileOutputStream(ruta));
-                } catch (IOException ex) {
-                    System.out.println(ex.getMessage());
-                }
-                break;
-        }*/
         txtCantidad1.setVisible(false);
         jLabelCant1.setVisible(false);
         txtCantidad2.setVisible(false);
@@ -496,7 +468,7 @@ public class Desayunos extends javax.swing.JDialog {
             producto = jLabel1.getText();
             precio = 5000;
             total = precio * cantidad;
-            Carta.pedido = new Pedido(cantidad, producto, precio, total);
+            pedido = new Pedido(cantidad, producto, precio, total);
             Carta.p.add(Carta.pedido);
         }
         if (checkBox2.isSelected()) {
@@ -504,7 +476,7 @@ public class Desayunos extends javax.swing.JDialog {
             producto = jLabel2.getText();
             precio = 5500;
             total = precio * cantidad;
-            Carta.pedido = new Pedido(cantidad, producto, precio, total);
+            pedido = new Pedido(cantidad, producto, precio, total);
             Carta.p.add(Carta.pedido);
         }
         if (checkBox3.isSelected()) {
@@ -512,7 +484,7 @@ public class Desayunos extends javax.swing.JDialog {
             producto = jLabel3.getText();
             precio = 4000;
             total = precio * cantidad;
-            Carta.pedido = new Pedido(cantidad, producto, precio, total);
+            pedido = new Pedido(cantidad, producto, precio, total);
             Carta.p.add(Carta.pedido);
         }
         if (checkBox4.isSelected()) {
@@ -520,7 +492,7 @@ public class Desayunos extends javax.swing.JDialog {
             producto = jLabel4.getText();
             precio = 3000;
             total = precio * cantidad;
-            Carta.pedido = new Pedido(cantidad, producto, precio, total);
+            pedido = new Pedido(cantidad, producto, precio, total);
             Carta.p.add(Carta.pedido);
         }
         if (checkBox5.isSelected()) {
@@ -528,7 +500,7 @@ public class Desayunos extends javax.swing.JDialog {
             producto = jLabel5.getText();
             precio = 3500;
             total = precio * cantidad;
-            Carta.pedido = new Pedido(cantidad, producto, precio, total);
+            pedido = new Pedido(cantidad, producto, precio, total);
             Carta.p.add(Carta.pedido);
         }
         if (checkBox6.isSelected()) {
@@ -536,7 +508,7 @@ public class Desayunos extends javax.swing.JDialog {
             producto = jLabel6.getText();
             precio = 5000;
             total = precio * cantidad;
-            Carta.pedido = new Pedido(cantidad, producto, precio, total);
+            pedido = new Pedido(cantidad, producto, precio, total);
             Carta.p.add(Carta.pedido);
         } else {
         }

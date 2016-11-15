@@ -5,9 +5,11 @@
  */
 package interfaz;
 
+import clases.Administrador;
 import clases.Helper;
-import clases.Mesas;
 import clases.Pedido;
+import static interfaz.Carta.p;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -15,6 +17,8 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,15 +29,37 @@ public class Opciones extends javax.swing.JDialog {
     /**
      * Creates new form Opciones
      */
-    String ruta;
-    ObjectOutputStream salida;
-    //ArrayList<Mesas> mesas;
+    public static String ruta;
+    ArrayList<Pedido> pedido;
+    public static ObjectOutputStream salida;
 
     public Opciones(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        cmdEliminar.setEnabled(false);
-        cmdConfirmar.setEnabled(false);
+        String ingreso = Principal.jlbIngreso.getText();
+        if (ingreso.equals("Administrador")) {
+            cmdAbrirCarta.setEnabled(false);
+        } else {
+        }
+        if (ingreso.equals("Mesero")) {
+            cmdSaldar.setEnabled(false);
+        } else {
+        }
+        JButton botonesD[] = {cmdEliminar, cmdConfirmar, cmdAggProducto};
+        Helper.deshabilitarBotones(botonesD);
+        Helper.deshabilitarBotones(botonesD);
+        pedido = Helper.traerDatos(ruta);
+        if (!pedido.isEmpty()) {
+            cmdAggProducto.setEnabled(true);
+            cmdConfirmar.setEnabled(false);
+        }
+        try {
+            salida = new ObjectOutputStream(new FileOutputStream(ruta));
+        } catch (IOException ex) {
+            Logger.getLogger(Opciones.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Helper.volcado(salida, pedido);
+        Helper.llenarTabla(tblPedido, pedido);
     }
 
     /**
@@ -53,10 +79,11 @@ public class Opciones extends javax.swing.JDialog {
         jPanel3 = new javax.swing.JPanel();
         cmdAbrirCarta = new javax.swing.JButton();
         cmdSaldar = new javax.swing.JButton();
-        cmdCambiarMesa = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         cmdCancelar = new javax.swing.JButton();
         cmdConfirmar = new javax.swing.JButton();
+        cmdAggProducto = new javax.swing.JButton();
+        cmdOk = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("OPCIONES DE MESA");
@@ -92,15 +119,20 @@ public class Opciones extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(tblPedido);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 430, 280));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 600, 280));
 
         cmdEliminar.setBackground(new java.awt.Color(0, 0, 0));
         cmdEliminar.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         cmdEliminar.setForeground(new java.awt.Color(255, 255, 255));
         cmdEliminar.setText("Eliminar");
-        jPanel2.add(cmdEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 330, -1, -1));
+        cmdEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdEliminarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(cmdEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 320, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 470, 370));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 640, 370));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Trebuchet MS", 1, 12))); // NOI18N
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -120,15 +152,14 @@ public class Opciones extends javax.swing.JDialog {
         cmdSaldar.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         cmdSaldar.setForeground(new java.awt.Color(255, 255, 255));
         cmdSaldar.setText("Saldar Mesa");
-        jPanel3.add(cmdSaldar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        cmdSaldar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdSaldarActionPerformed(evt);
+            }
+        });
+        jPanel3.add(cmdSaldar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
-        cmdCambiarMesa.setBackground(new java.awt.Color(0, 0, 0));
-        cmdCambiarMesa.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        cmdCambiarMesa.setForeground(new java.awt.Color(255, 255, 255));
-        cmdCambiarMesa.setText("Cambiar Mesa");
-        jPanel3.add(cmdCambiarMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
-
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 230, 160));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 230, 120));
 
         jPanel4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -155,17 +186,39 @@ public class Opciones extends javax.swing.JDialog {
         });
         jPanel4.add(cmdConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 200, 110));
+        cmdAggProducto.setBackground(new java.awt.Color(0, 0, 0));
+        cmdAggProducto.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        cmdAggProducto.setForeground(new java.awt.Color(255, 255, 255));
+        cmdAggProducto.setText("Agregrar Producto");
+        cmdAggProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdAggProductoActionPerformed(evt);
+            }
+        });
+        jPanel4.add(cmdAggProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, -1, -1));
+
+        cmdOk.setBackground(new java.awt.Color(0, 0, 0));
+        cmdOk.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        cmdOk.setForeground(new java.awt.Color(255, 255, 255));
+        cmdOk.setText("Ok");
+        cmdOk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdOkActionPerformed(evt);
+            }
+        });
+        jPanel4.add(cmdOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, -1, -1));
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 370, 110));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 592, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 566, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -175,7 +228,6 @@ public class Opciones extends javax.swing.JDialog {
     private void cmdAbrirCartaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdAbrirCartaActionPerformed
         Carta a = new Carta(null, true);
         a.setVisible(true);
-        cmdConfirmar.setEnabled(true);
     }//GEN-LAST:event_cmdAbrirCartaActionPerformed
 
     private void tblPedidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPedidoMouseClicked
@@ -184,64 +236,196 @@ public class Opciones extends javax.swing.JDialog {
 
     private void cmdConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdConfirmarActionPerformed
         int estado = Integer.parseInt(Principal.txtEstado.getText());
+        ArrayList<Pedido> p = Helper.traerTabla(tblPedido);
         switch (estado) {
             case 1:
                 Principal.cmdMesa1.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
                 Principal.cmdMesa1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
-                Principal.jlbM_Ocupada1.setText("1");
+                String rutaMesa1 = "src/datos/pedido_Mesa1.txt";
+                ObjectOutputStream salida1;
+                try {
+                    salida1 = new ObjectOutputStream(new FileOutputStream(rutaMesa1));
+                    Helper.guardarArraysList(salida1, p);
+                } catch (IOException ex) {
+                    Logger.getLogger(Carta.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                p.clear();
+                //Principal.jlbM_Ocupada1.setText("1");
                 break;
             case 2:
                 Principal.cmdMesa2.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
                 Principal.cmdMesa2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
-                Principal.jlbM_Ocupada2.setText("2");
+                String rutaMesa2 = "src/datos/pedido_mesa2.txt";
+                ObjectOutputStream salida2;
+                try {
+                    salida2 = new ObjectOutputStream(new FileOutputStream(rutaMesa2));
+                    Helper.guardarArraysList(salida2, p);
+                    p.clear();
+                } catch (IOException ex) {
+                    Logger.getLogger(Carta.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                //Principal.jlbM_Ocupada2.setText("1");
                 break;
             case 3:
                 Principal.cmdMesa3.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
                 Principal.cmdMesa3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
-                Principal.jlbM_Ocupada3.setText("3");
+                String rutaMesa3 = "src/datos/pedido_mesa3.txt";
+                ObjectOutputStream salida3;
+                try {
+                    salida3 = new ObjectOutputStream(new FileOutputStream(rutaMesa3));
+                    Helper.guardarArraysList(salida3, p);
+                } catch (IOException ex) {
+                    Logger.getLogger(Carta.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                //Principal.jlbM_Ocupada3.setText("1");
                 break;
             case 4:
                 Principal.cmdMesa4.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
                 Principal.cmdMesa4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
-                Principal.jlbM_Ocupada4.setText("4");
+                String rutaMesa4 = "src/datos/pedido_mesa4.txt";
+                ObjectOutputStream salida4;
+                try {
+                    salida4 = new ObjectOutputStream(new FileOutputStream(rutaMesa4));
+                    Helper.guardarArraysList(salida4, p);
+                } catch (IOException ex) {
+                    Logger.getLogger(Carta.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                //Principal.jlbM_Ocupada4.setText("4");
                 break;
             case 5:
                 Principal.cmdMesa5.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
                 Principal.cmdMesa5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
-                Principal.jlbM_Ocupada5.setText("5");
+                String rutaMesa5 = "src/datos/pedido_mesa5.txt";
+                ObjectOutputStream salida5;
+                try {
+                    salida5 = new ObjectOutputStream(new FileOutputStream(rutaMesa5));
+                    Helper.guardarArraysList(salida5, p);
+                } catch (IOException ex) {
+                    Logger.getLogger(Carta.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                //Principal.jlbM_Ocupada5.setText("5");
                 break;
             case 6:
                 Principal.cmdMesa6.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
                 Principal.cmdMesa6.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
-                Principal.jlbM_Ocupada6.setText("6");
+                String rutaMesa6 = "src/datos/pedido_mesa6.txt";
+                ObjectOutputStream salida6;
+                try {
+                    salida6 = new ObjectOutputStream(new FileOutputStream(rutaMesa6));
+                    Helper.guardarArraysList(salida6, p);
+                } catch (IOException ex) {
+                    Logger.getLogger(Carta.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                //Principal.jlbM_Ocupada6.setText("6");
                 break;
             case 7:
                 Principal.cmdMesa7.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
                 Principal.cmdMesa7.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
-                Principal.jlbM_Ocupada7.setText("7");
+                String rutaMesa7 = "src/datos/pedido_mesa7.txt";
+                ObjectOutputStream salida7;
+                try {
+                    salida7 = new ObjectOutputStream(new FileOutputStream(rutaMesa7));
+                    Helper.guardarArraysList(salida7, p);
+                } catch (IOException ex) {
+                    Logger.getLogger(Carta.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                //Principal.jlbM_Ocupada7.setText("7");
                 break;
             case 8:
                 Principal.cmdMesa8.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
                 Principal.cmdMesa8.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
-                Principal.jlbM_Ocupada8.setText("8");
+                String rutaMesa8 = "src/datos/pedido_mesa8.txt";
+                ObjectOutputStream salida8;
+                try {
+                    salida8 = new ObjectOutputStream(new FileOutputStream(rutaMesa8));
+                    Helper.guardarArraysList(salida8, p);
+                } catch (IOException ex) {
+                    Logger.getLogger(Carta.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                //Principal.jlbM_Ocupada8.setText("8");
                 break;
             case 9:
                 Principal.cmdMesa9.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
                 Principal.cmdMesa9.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
-                Principal.jlbM_Ocupada9.setText("9");
+                String rutaMesa9 = "src/datos/pedido_mesa9.txt";
+                ObjectOutputStream salida9;
+                try {
+                    salida9 = new ObjectOutputStream(new FileOutputStream(rutaMesa9));
+                    Helper.guardarArraysList(salida9, p);
+                } catch (IOException ex) {
+                    Logger.getLogger(Carta.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                //Principal.jlbM_Ocupada9.setText("9");
                 break;
             case 10:
                 Principal.cmdMesa10.setIcon(new ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas.png")));
                 Principal.cmdMesa10.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas_ocupadas_mouse.png")));
-                Principal.jlbM_Ocupada10.setText("10");
+                String rutaMesa10 = "src/datos/pedido_mesa10.txt";
+                ObjectOutputStream salida10;
+                try {
+                    salida10 = new ObjectOutputStream(new FileOutputStream(rutaMesa10));
+                    Helper.guardarArraysList(salida10, p);
+                } catch (IOException ex) {
+                    Logger.getLogger(Carta.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                //Principal.jlbM_Ocupada10.setText("10");
                 break;
         }
+        //txtEliminar.setText("1");
         Opciones.this.setVisible(false);
     }//GEN-LAST:event_cmdConfirmarActionPerformed
 
     private void cmdCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCancelarActionPerformed
         Opciones.this.setVisible(false);
     }//GEN-LAST:event_cmdCancelarActionPerformed
+
+    private void cmdEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdEliminarActionPerformed
+        int i, op;
+        op = JOptionPane.showConfirmDialog(this, "¿Seguro que desea eliminar este Producto ?", "Eliminar", JOptionPane.YES_NO_OPTION);
+        i = tblPedido.getSelectedRow();
+        ArrayList<Pedido> pedido;
+        pedido = Helper.traerDatos(ruta);
+        try {
+            salida = new ObjectOutputStream(new FileOutputStream(ruta));
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Agregar_Admin.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Agregar_Admin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if (p.isEmpty() && op == JOptionPane.YES_OPTION) {
+            pedido.remove(i);
+            Helper.volcado(salida, pedido);
+            Helper.llenarTabla(tblPedido, pedido);
+        }
+        if (!p.isEmpty() && op == JOptionPane.YES_OPTION) {
+            p.remove(i);
+            Helper.volcado(salida, p);
+            Helper.llenarTabla(tblPedido, p);
+        }
+        cmdEliminar.setEnabled(false);
+    }//GEN-LAST:event_cmdEliminarActionPerformed
+
+    private void cmdAggProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdAggProductoActionPerformed
+        Opciones.this.setVisible(false);
+        p.clear();
+    }//GEN-LAST:event_cmdAggProductoActionPerformed
+
+    private void cmdOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdOkActionPerformed
+        Opciones.this.setVisible(false);
+    }//GEN-LAST:event_cmdOkActionPerformed
+
+    private void cmdSaldarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdSaldarActionPerformed
+        /*ArrayList<Pedido> pedido;
+        pedido = Helper.traerDatos(ruta);
+        try {
+            salida = new ObjectOutputStream(new FileOutputStream(ruta));
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Agregar_Admin.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Agregar_Admin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        */
+    }//GEN-LAST:event_cmdSaldarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -257,16 +441,24 @@ public class Opciones extends javax.swing.JDialog {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Opciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Opciones.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Opciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Opciones.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Opciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Opciones.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Opciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Opciones.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -286,12 +478,13 @@ public class Opciones extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton cmdAbrirCarta;
-    private javax.swing.JButton cmdCambiarMesa;
+    public static javax.swing.JButton cmdAbrirCarta;
+    public static javax.swing.JButton cmdAggProducto;
     private javax.swing.JButton cmdCancelar;
-    private javax.swing.JButton cmdConfirmar;
+    public static javax.swing.JButton cmdConfirmar;
     private javax.swing.JButton cmdEliminar;
-    private javax.swing.JButton cmdSaldar;
+    private javax.swing.JButton cmdOk;
+    public static javax.swing.JButton cmdSaldar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
