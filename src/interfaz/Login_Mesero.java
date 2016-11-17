@@ -9,7 +9,6 @@ import clases.Administrador;
 import clases.Helper;
 import clases.Mesero;
 import static interfaz.Principal.*;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -24,7 +23,6 @@ public class Login_Mesero extends javax.swing.JDialog {
      * Creates new form Agregar_Admin
      */
     String rutaM, rutaA;
-    ObjectOutputStream salida;
 
     public Login_Mesero(java.awt.Frame parent, boolean modal) {
         super(parent, modal);

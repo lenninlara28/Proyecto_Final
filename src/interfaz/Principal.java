@@ -6,7 +6,7 @@
 package interfaz;
 
 import clases.Helper;
-import clases.Pedido;
+import clases.Mesero;
 import static interfaz.Opciones.ruta;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
@@ -21,11 +21,12 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
+    public static ArrayList<String> p1, p2, p3, p4, p5, p6, p7, p8, p9, p10;
+
     public Principal() {
         initComponents();
         JButton botonesD[] = {cmdMesa1, cmdMesa2, cmdMesa3, cmdMesa4, cmdMesa5, cmdMesa6, cmdMesa7, cmdMesa8, cmdMesa9, cmdMesa10};
         Helper.deshabilitarBotones(botonesD);
-        ArrayList<String> p1, p2, p3, p4, p5, p6, p7, p8, p9, p10;
         p1 = Helper.traerDatos("src/datos/Pedido_Mesa1.txt");
         p2 = Helper.traerDatos("src/datos/Pedido_mesa2.txt");
         p3 = Helper.traerDatos("src/datos/Pedido_mesa3.txt");
@@ -114,13 +115,16 @@ public class Principal extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         txtEstado = new javax.swing.JLabel();
-        jlbAux = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         mnIngreso = new javax.swing.JMenu();
         mnAdministrador = new javax.swing.JMenuItem();
         mnMesero = new javax.swing.JMenuItem();
         mnOpciones = new javax.swing.JMenu();
-        mnReportes = new javax.swing.JMenuItem();
+        mnReportes = new javax.swing.JMenu();
+        mnCantMeseros = new javax.swing.JMenuItem();
+        mnAdmin = new javax.swing.JMenuItem();
+        mnCantMesasOcupadas = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         mnSalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -324,9 +328,6 @@ public class Principal extends javax.swing.JFrame {
         txtEstado.setEnabled(false);
         jPanel1.add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 20, 30));
 
-        jlbAux.setText("0");
-        jPanel1.add(jlbAux, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, -1, -1));
-
         mnIngreso.setText("Ingresar ");
         mnIngreso.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
@@ -353,8 +354,45 @@ public class Principal extends javax.swing.JFrame {
         mnOpciones.setText("Opciones");
         mnOpciones.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
-        mnReportes.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         mnReportes.setText("Reportes");
+        mnReportes.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+
+        mnCantMeseros.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        mnCantMeseros.setText("Cantidad De Meseros ");
+        mnCantMeseros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnCantMeserosActionPerformed(evt);
+            }
+        });
+        mnReportes.add(mnCantMeseros);
+
+        mnAdmin.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        mnAdmin.setText("Cantidad De Adminstradores");
+        mnAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnAdminActionPerformed(evt);
+            }
+        });
+        mnReportes.add(mnAdmin);
+
+        mnCantMesasOcupadas.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        mnCantMesasOcupadas.setText("Cantidad De Mesas Ocupadas");
+        mnCantMesasOcupadas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnCantMesasOcupadasActionPerformed(evt);
+            }
+        });
+        mnReportes.add(mnCantMesasOcupadas);
+
+        jMenuItem1.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jMenuItem1.setText("Cantidad De Mesas Disponibles");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        mnReportes.add(jMenuItem1);
+
         mnOpciones.add(mnReportes);
 
         jMenuBar1.add(mnOpciones);
@@ -469,6 +507,108 @@ public class Principal extends javax.swing.JFrame {
         a.setVisible(true);
     }//GEN-LAST:event_mnMeseroActionPerformed
 
+    private void mnCantMeserosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnCantMeserosActionPerformed
+        int cont;
+        cont = Helper.traerDatos("src/datos/Mesero.txt").size();
+        Helper.mensaje(this, "La Cantidad De Meseros ingresados es: " + cont, 1);
+    }//GEN-LAST:event_mnCantMeserosActionPerformed
+
+    private void mnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnAdminActionPerformed
+        int cont;
+        cont = Helper.traerDatos("src/datos/Admin.txt").size();
+        Helper.mensaje(this, "La Cantidad De Administradores ingresados es: " + cont, 1);
+    }//GEN-LAST:event_mnAdminActionPerformed
+
+    private void mnCantMesasOcupadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnCantMesasOcupadasActionPerformed
+        int ocupadas = 0;
+        p1 = Helper.traerDatos("src/datos/Pedido_Mesa1.txt");
+        p2 = Helper.traerDatos("src/datos/Pedido_mesa2.txt");
+        p3 = Helper.traerDatos("src/datos/Pedido_mesa3.txt");
+        p4 = Helper.traerDatos("src/datos/Pedido_mesa4.txt");
+        p5 = Helper.traerDatos("src/datos/Pedido_mesa5.txt");
+        p6 = Helper.traerDatos("src/datos/Pedido_mesa6.txt");
+        p7 = Helper.traerDatos("src/datos/Pedido_mesa7.txt");
+        p8 = Helper.traerDatos("src/datos/Pedido_mesa8.txt");
+        p9 = Helper.traerDatos("src/datos/Pedido_mesa9.txt");
+        p10 = Helper.traerDatos("src/datos/Pedido_mesa10.txt");
+        if (!p1.isEmpty()) {
+            ocupadas = ocupadas + 1;
+        }
+        if (!p2.isEmpty()) {
+            ocupadas = ocupadas + 1;
+        }
+        if (!p3.isEmpty()) {
+            ocupadas = ocupadas + 1;
+        }
+        if (!p4.isEmpty()) {
+            ocupadas = ocupadas + 1;
+        }
+        if (!p5.isEmpty()) {
+            ocupadas = ocupadas + 1;
+        }
+        if (!p6.isEmpty()) {
+            ocupadas = ocupadas + 1;
+        }
+        if (!p7.isEmpty()) {
+            ocupadas = ocupadas + 1;
+        }
+        if (!p8.isEmpty()) {
+            ocupadas = ocupadas + 1;
+        }
+        if (!p9.isEmpty()) {
+            ocupadas = ocupadas + 1;
+        }
+        if (!p10.isEmpty()) {
+            ocupadas = ocupadas + 1;
+        }
+        Helper.mensaje(this, "La Cantidad De Mesas Ocupadas Es " + ocupadas, 1);
+    }//GEN-LAST:event_mnCantMesasOcupadasActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        int disponible = 0;
+        p1 = Helper.traerDatos("src/datos/Pedido_Mesa1.txt");
+        p2 = Helper.traerDatos("src/datos/Pedido_mesa2.txt");
+        p3 = Helper.traerDatos("src/datos/Pedido_mesa3.txt");
+        p4 = Helper.traerDatos("src/datos/Pedido_mesa4.txt");
+        p5 = Helper.traerDatos("src/datos/Pedido_mesa5.txt");
+        p6 = Helper.traerDatos("src/datos/Pedido_mesa6.txt");
+        p7 = Helper.traerDatos("src/datos/Pedido_mesa7.txt");
+        p8 = Helper.traerDatos("src/datos/Pedido_mesa8.txt");
+        p9 = Helper.traerDatos("src/datos/Pedido_mesa9.txt");
+        p10 = Helper.traerDatos("src/datos/Pedido_mesa10.txt");
+        if (p1.isEmpty()) {
+            disponible = disponible + 1;
+        }
+        if (p2.isEmpty()) {
+            disponible = disponible + 1;
+        }
+        if (p3.isEmpty()) {
+            disponible = disponible + 1;
+        }
+        if (p4.isEmpty()) {
+            disponible = disponible + 1;
+        }
+        if (p5.isEmpty()) {
+            disponible = disponible + 1;
+        }
+        if (p6.isEmpty()) {
+            disponible = disponible + 1;
+        }
+        if (p7.isEmpty()) {
+            disponible = disponible + 1;
+        }
+        if (p8.isEmpty()) {
+            disponible = disponible + 1;
+        }
+        if (p9.isEmpty()) {
+            disponible = disponible + 1;
+        }
+        if (p10.isEmpty()) {
+            disponible = disponible + 1;
+        }
+        Helper.mensaje(this, "La Cantidad De Mesas Ocupadas Es " + disponible, 1);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -538,14 +678,17 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
-    public static javax.swing.JLabel jlbAux;
     public static javax.swing.JLabel jlbIngreso;
+    private javax.swing.JMenuItem mnAdmin;
     private javax.swing.JMenuItem mnAdministrador;
+    private javax.swing.JMenuItem mnCantMesasOcupadas;
+    private javax.swing.JMenuItem mnCantMeseros;
     private javax.swing.JMenu mnIngreso;
     private javax.swing.JMenuItem mnMesero;
     private javax.swing.JMenu mnOpciones;
-    private javax.swing.JMenuItem mnReportes;
+    private javax.swing.JMenu mnReportes;
     private javax.swing.JMenu mnSalir;
     public static javax.swing.JLabel txtEstado;
     // End of variables declaration//GEN-END:variables

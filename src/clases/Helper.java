@@ -5,7 +5,6 @@
  */
 package clases;
 
-import static interfaz.Principal.*;
 import java.awt.Component;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -14,7 +13,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
@@ -53,14 +51,6 @@ public class Helper {
 
             }
         }
-    }
-
-    public static void porDefectoTabla(JTable tabla1) {
-        DefaultTableModel tm;
-        tm = (DefaultTableModel) tabla1.getModel();
-        tm.setColumnCount(0);
-        tm.setRowCount(0);
-
     }
 
     public static void habilitarBotones(JButton[] botonesH) {

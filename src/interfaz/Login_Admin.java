@@ -8,7 +8,6 @@ package interfaz;
 import clases.Administrador;
 import clases.Helper;
 import static interfaz.Principal.*;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -23,7 +22,6 @@ public class Login_Admin extends javax.swing.JDialog {
      * Creates new form Agregar_Admin
      */
     String ruta;
-    ObjectOutputStream salida;
 
     public Login_Admin(java.awt.Frame parent, boolean modal) {
         super(parent, modal);

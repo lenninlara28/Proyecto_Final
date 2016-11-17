@@ -5,6 +5,8 @@
  */
 package interfaz;
 
+import clases.Helper;
+
 /**
  *
  * @author hp 14
@@ -14,9 +16,16 @@ public class TiqueteVenta extends javax.swing.JDialog {
     /**
      * Creates new form TiqueteVenta
      */
+    String rutaA, rutaM;
+    public static String FormaPago;
+
     public TiqueteVenta(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        rutaA = "src/datos/Admin.txt";
+        rutaM = "src/datos/Mesero.txt";
+        Helper.llenarComboNombresAdmin(cmbAdministrador, rutaA);
+        Helper.llenarComboNombresMeseros(cmbMesero, rutaM);
     }
 
     /**
@@ -28,21 +37,172 @@ public class TiqueteVenta extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        jPanel3 = new javax.swing.JPanel();
+        rbtEfectivo = new javax.swing.JRadioButton();
+        rbtCredito = new javax.swing.JRadioButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        cmbAdministrador = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        cmbMesero = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
+        cmbMesas = new javax.swing.JComboBox<>();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        txtNombre_Cliente = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        txtCedula_Cliente = new javax.swing.JTextField();
+        cmdFacturar = new javax.swing.JButton();
+        cmdCancelar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("VENTA");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pack();
+        buttonGroup1.add(rbtEfectivo);
+        rbtEfectivo.setText("Efectivo");
+        jPanel3.add(rbtEfectivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
+
+        buttonGroup1.add(rbtCredito);
+        rbtCredito.setText("Tarjeta De Credito");
+        jPanel3.add(rbtCredito, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/efectivo.png"))); // NOI18N
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 40, 30));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tarjeta.png"))); // NOI18N
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 380, 60));
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        cmbAdministrador.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jPanel2.add(cmbAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 120, -1));
+
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel1.setText("Administrador");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel2.setText("Mesero");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+
+        cmbMesero.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jPanel2.add(cmbMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 120, -1));
+
+        jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel6.setText("Mesa");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+
+        cmbMesas.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        cmbMesas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mesa 1", "Mesa 2", "Mesa 3", "Mesa 4", "Mesa 5", "Mesa 6", "Mesa 7", "Mesa 8", "Mesa 9", "Mesa 10" }));
+        jPanel2.add(cmbMesas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 90, -1));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 150, 230));
+
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel7.setText("Nombre Del Cliente");
+        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
+
+        txtNombre_Cliente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombre_ClienteKeyTyped(evt);
+            }
+        });
+        jPanel4.add(txtNombre_Cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 120, -1));
+
+        jLabel8.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel8.setText("Cedula Del Cliente");
+        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+
+        txtCedula_Cliente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCedula_ClienteKeyTyped(evt);
+            }
+        });
+        jPanel4.add(txtCedula_Cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 120, -1));
+
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 140, 230));
+
+        cmdFacturar.setBackground(new java.awt.Color(0, 0, 0));
+        cmdFacturar.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        cmdFacturar.setForeground(new java.awt.Color(255, 255, 255));
+        cmdFacturar.setText("Facturar");
+        cmdFacturar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdFacturarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cmdFacturar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 430, -1, -1));
+
+        cmdCancelar.setBackground(new java.awt.Color(0, 0, 0));
+        cmdCancelar.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        cmdCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        cmdCancelar.setText("Cancelar");
+        cmdCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCancelarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cmdCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_pago.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, -1));
+
+        setSize(new java.awt.Dimension(525, 545));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmdFacturarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdFacturarActionPerformed
+        if (txtCedula_Cliente.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Digite La Cedula Del Cliente ", 3);
+        } else if (txtNombre_Cliente.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Digite El Nombre Del Cliente ", 3);
+        } else if (!rbtEfectivo.isSelected() && !rbtCredito.isSelected()) {
+            Helper.mensaje(this, "Seleccione La Forma De Pago ", WIDTH);
+        } else {
+            if (rbtEfectivo.isSelected()) {
+                FormaPago = rbtEfectivo.getText();
+            } else {
+                FormaPago = rbtCredito.getText();
+            }
+            Factura a = new Factura(null, true);
+            a.setVisible(true);
+            this.setVisible(false);
+        }
+    }//GEN-LAST:event_cmdFacturarActionPerformed
+
+    private void cmdCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCancelarActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_cmdCancelarActionPerformed
+
+    private void txtCedula_ClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedula_ClienteKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCedula_ClienteKeyTyped
+
+    private void txtNombre_ClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombre_ClienteKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isLetter(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtNombre_ClienteKeyTyped
 
     /**
      * @param args the command line arguments
@@ -87,5 +247,26 @@ public class TiqueteVenta extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
+    public static javax.swing.JComboBox<String> cmbAdministrador;
+    public static javax.swing.JComboBox<String> cmbMesas;
+    public static javax.swing.JComboBox<String> cmbMesero;
+    private javax.swing.JButton cmdCancelar;
+    private javax.swing.JButton cmdFacturar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    public static javax.swing.JRadioButton rbtCredito;
+    public static javax.swing.JRadioButton rbtEfectivo;
+    public static javax.swing.JTextField txtCedula_Cliente;
+    public static javax.swing.JTextField txtNombre_Cliente;
     // End of variables declaration//GEN-END:variables
 }

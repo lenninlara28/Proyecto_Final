@@ -15,12 +15,9 @@ import java.io.ObjectOutputStream;
 public class Pedido implements java.io.Serializable {
 
     private int cantidad;
-    private String cantidad2;
     private String producto;
     private int precio;
-    private String precio2;
     private int total;
-    private String total2;
 
     public Pedido(int cantidad, String producto, int precio, int total) {
         this.cantidad = cantidad;

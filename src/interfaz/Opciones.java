@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 /**
@@ -32,13 +31,14 @@ public class Opciones extends javax.swing.JDialog {
     public static String ruta;
     ArrayList<Pedido> pedido;
     public static ObjectOutputStream salida;
-
+    
     public Opciones(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         String ingreso = Principal.jlbIngreso.getText();
         if (ingreso.equals("Administrador")) {
             cmdAbrirCarta.setEnabled(false);
+            cmdCancelar.setEnabled(false);
         } else {
         }
         if (ingreso.equals("Mesero")) {
@@ -54,6 +54,12 @@ public class Opciones extends javax.swing.JDialog {
         Helper.volcado(salida, pedido);
         Helper.llenarTabla(tblPedido, pedido);
         cmdEliminar.setEnabled(false);
+        if (pedido.isEmpty()) {
+            cmdSaldar.setEnabled(false);
+            cmdCancelar.setEnabled(false);
+        } else {
+            
+        }
     }
 
     /**
@@ -381,66 +387,72 @@ public class Opciones extends javax.swing.JDialog {
     private void cmdCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCancelarActionPerformed
         ArrayList<Pedido> p = Helper.traerTabla(tblPedido);
         p.clear();
-        try {
-            salida = new ObjectOutputStream(new FileOutputStream(ruta));
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Agregar_Admin.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Agregar_Admin.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        Helper.volcado(salida, p);
-        Carta.p.clear();
-        Opciones.this.setVisible(false);
-        ArrayList<String> p1, p2, p3, p4, p5, p6, p7, p8, p9, p10;
-        p1 = Helper.traerDatos("src/datos/Pedido_Mesa1.txt");
-        p2 = Helper.traerDatos("src/datos/Pedido_mesa2.txt");
-        p3 = Helper.traerDatos("src/datos/Pedido_mesa3.txt");
-        p4 = Helper.traerDatos("src/datos/Pedido_mesa4.txt");
-        p5 = Helper.traerDatos("src/datos/Pedido_mesa5.txt");
-        p6 = Helper.traerDatos("src/datos/Pedido_mesa6.txt");
-        p7 = Helper.traerDatos("src/datos/Pedido_mesa7.txt");
-        p8 = Helper.traerDatos("src/datos/Pedido_mesa8.txt");
-        p9 = Helper.traerDatos("src/datos/Pedido_mesa9.txt");
-        p10 = Helper.traerDatos("src/datos/Pedido_mesa10.txt");
-        if (p1.isEmpty()) {
-            cmdMesa1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles.png")));
-            cmdMesa1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles mouse.png")));
-        }
-        if (p2.isEmpty()) {
-            cmdMesa2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles.png")));
-            cmdMesa2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles mouse.png")));
-        }
-        if (p3.isEmpty()) {
-            cmdMesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles.png")));
-            cmdMesa3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles mouse.png")));
-        }
-        if (p4.isEmpty()) {
-            cmdMesa4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles.png")));
-            cmdMesa4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles mouse.png")));
-        }
-        if (p5.isEmpty()) {
-            cmdMesa5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles.png")));
-            cmdMesa5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles mouse.png")));
-        }
-        if (p6.isEmpty()) {
-            cmdMesa6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles.png")));
-            cmdMesa6.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles mouse.png")));
-        }
-        if (p7.isEmpty()) {
-            cmdMesa7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles.png")));
-            cmdMesa7.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles mouse.png")));
-        }
-        if (p8.isEmpty()) {
-            cmdMesa8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles.png")));
-            cmdMesa8.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles mouse.png")));
-        }
-        if (p9.isEmpty()) {
-            cmdMesa9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles.png")));
-            cmdMesa9.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles mouse.png")));
-        }
-        if (p10.isEmpty()) {
-            cmdMesa10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles.png")));
-            cmdMesa10.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles mouse.png")));
+        int o = JOptionPane.showConfirmDialog(this, "Si Cancela La Mesa Borrara Todo El Pedido\n"
+                + "Desea Continuar??", "CANCELAR MESA", JOptionPane.YES_NO_OPTION);
+        if (o == JOptionPane.YES_OPTION) {
+            try {
+                salida = new ObjectOutputStream(new FileOutputStream(ruta));
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(Agregar_Admin.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(Agregar_Admin.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            Helper.volcado(salida, p);
+            Carta.p.clear();
+            Opciones.this.setVisible(false);
+            ArrayList<String> p1, p2, p3, p4, p5, p6, p7, p8, p9, p10;
+            p1 = Helper.traerDatos("src/datos/Pedido_Mesa1.txt");
+            p2 = Helper.traerDatos("src/datos/Pedido_mesa2.txt");
+            p3 = Helper.traerDatos("src/datos/Pedido_mesa3.txt");
+            p4 = Helper.traerDatos("src/datos/Pedido_mesa4.txt");
+            p5 = Helper.traerDatos("src/datos/Pedido_mesa5.txt");
+            p6 = Helper.traerDatos("src/datos/Pedido_mesa6.txt");
+            p7 = Helper.traerDatos("src/datos/Pedido_mesa7.txt");
+            p8 = Helper.traerDatos("src/datos/Pedido_mesa8.txt");
+            p9 = Helper.traerDatos("src/datos/Pedido_mesa9.txt");
+            p10 = Helper.traerDatos("src/datos/Pedido_mesa10.txt");
+            if (p1.isEmpty()) {
+                cmdMesa1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles.png")));
+                cmdMesa1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles mouse.png")));
+            }
+            if (p2.isEmpty()) {
+                cmdMesa2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles.png")));
+                cmdMesa2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles mouse.png")));
+            }
+            if (p3.isEmpty()) {
+                cmdMesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles.png")));
+                cmdMesa3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles mouse.png")));
+            }
+            if (p4.isEmpty()) {
+                cmdMesa4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles.png")));
+                cmdMesa4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles mouse.png")));
+            }
+            if (p5.isEmpty()) {
+                cmdMesa5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles.png")));
+                cmdMesa5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles mouse.png")));
+            }
+            if (p6.isEmpty()) {
+                cmdMesa6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles.png")));
+                cmdMesa6.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles mouse.png")));
+            }
+            if (p7.isEmpty()) {
+                cmdMesa7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles.png")));
+                cmdMesa7.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles mouse.png")));
+            }
+            if (p8.isEmpty()) {
+                cmdMesa8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles.png")));
+                cmdMesa8.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles mouse.png")));
+            }
+            if (p9.isEmpty()) {
+                cmdMesa9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles.png")));
+                cmdMesa9.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles mouse.png")));
+            }
+            if (p10.isEmpty()) {
+                cmdMesa10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles.png")));
+                cmdMesa10.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mesas disponibles mouse.png")));
+            }
+        } else {
+            
         }
     }//GEN-LAST:event_cmdCancelarActionPerformed
 
@@ -478,19 +490,13 @@ public class Opciones extends javax.swing.JDialog {
 
     private void cmdSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdSalirActionPerformed
         Opciones.this.setVisible(false);
+        p.clear();
     }//GEN-LAST:event_cmdSalirActionPerformed
 
     private void cmdSaldarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdSaldarActionPerformed
-        /*ArrayList<Pedido> pedido;
-        pedido = Helper.traerDatos(ruta);
-        try {
-            salida = new ObjectOutputStream(new FileOutputStream(ruta));
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Agregar_Admin.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Agregar_Admin.class.getName()).log(Level.SEVERE, null, ex);
-        }
-         */
+        TiqueteVenta a = new TiqueteVenta(null, true);
+        a.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_cmdSaldarActionPerformed
 
     /**
@@ -507,21 +513,21 @@ public class Opciones extends javax.swing.JDialog {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-
+                    
                 }
             }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(Opciones.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            
         } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(Opciones.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            
         } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(Opciones.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Opciones.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
@@ -546,7 +552,7 @@ public class Opciones extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton cmdAbrirCarta;
     public static javax.swing.JButton cmdAggProducto;
-    private javax.swing.JButton cmdCancelar;
+    public static javax.swing.JButton cmdCancelar;
     public static javax.swing.JButton cmdConfirmar;
     private javax.swing.JButton cmdEliminar;
     public static javax.swing.JButton cmdSaldar;

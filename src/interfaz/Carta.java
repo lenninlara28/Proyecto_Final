@@ -233,20 +233,21 @@ public class Carta extends javax.swing.JDialog {
                     + "Desea Continuar??", "ADVERTENCIA", JOptionPane.YES_NO_OPTION);
             if (aux == JOptionPane.YES_OPTION) {
                 Carta.this.setVisible(false);
+                cmdAggProducto.setEnabled(false);
             } else {
-                
+
             }
         } else {
-            
+            cmdCancelar.setEnabled(false);
+            cmdConfirmar.setEnabled(true);
             Helper.llenarTabla(tblPedido, p);
             Carta.this.setVisible(false);
         }
-        int aux = Integer.parseInt(Principal.jlbAux.getText());
         ArrayList<Pedido> pe = Helper.traerDatos(ruta);
         if (!pe.isEmpty()) {
             cmdAggProducto.setEnabled(true);
-        }
-        cmdConfirmar.setEnabled(true);
+            cmdConfirmar.setEnabled(false);
+        } 
     }//GEN-LAST:event_cmdOKActionPerformed
 
     /**
