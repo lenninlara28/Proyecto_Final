@@ -139,14 +139,19 @@ public class Login_Mesero extends javax.swing.JDialog {
     private void cmdNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdNuevoActionPerformed
         ArrayList<Administrador> administrador;
         administrador = Helper.traerDatos(rutaA);
+        int aux = 0;
         String codigoAdmin = JOptionPane.showInputDialog("Digite El Codigo Del Administrador Para Ingresar Un Mesero");
         for (int i = 0; i < administrador.size(); i++) {
             if (administrador.get(i).getCodigo().equals(codigoAdmin)) {
                 Agregar_Mesero a = new Agregar_Mesero(null, true);
                 a.setVisible(true);
-            } else {
-                Helper.mensaje(this, "Codigo Incorrecta", 3);
+                aux = 1;
             }
+        }
+        if (aux == 0) {
+            Helper.mensaje(this, "Codigo Incorrecta", 3);
+        }else{
+            
         }
     }//GEN-LAST:event_cmdNuevoActionPerformed
 

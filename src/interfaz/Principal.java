@@ -6,7 +6,6 @@
 package interfaz;
 
 import clases.Helper;
-import clases.Mesero;
 import static interfaz.Opciones.ruta;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
